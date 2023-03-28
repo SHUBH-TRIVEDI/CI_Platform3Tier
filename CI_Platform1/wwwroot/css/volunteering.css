@@ -1,0 +1,394 @@
+﻿.font {
+    font-style: NotoSans-Light;
+}
+
+.progress-bar {
+    background-color: #fd7e14 !important;
+}
+
+.bar {
+    width: 12vw;
+    height: 1vh;
+}
+
+.ton {
+    /* width: 19vw; */
+    border-color: #757575;
+    border-radius: 22px;
+}
+
+.font-si {
+    /* font-size: 0.7rem !important; */
+}
+
+.cardbtn {
+    border: 1px solid #fd7e14;
+    border-radius: 22px;
+}
+
+    .cardbtn span {
+        color: #fd7e14;
+    }
+
+.rule {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+}
+
+hr {
+    flex: 1;
+    border: none;
+    height: 2px;
+    background: black;
+}
+
+.hrbtn {
+    background-color: white !important;
+    border: 0.1rem solid rgb(184, 184, 184);
+    border-radius: 22px;
+    /* color: grey; */
+}
+
+.seat {
+    font-size: 0.7rem;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+    position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* Six columns side by side */
+.column {
+    float: left;
+    width: 25%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+    opacity: 0.6;
+}
+
+    .active,
+    .demo:hover {
+        opacity: 1;
+    }
+
+
+
+
+/* tabs css */
+
+
+
+.wrapper {
+    max-width: 90vw;
+    min-width: 275px;
+    margin: 10vh auto;
+}
+
+.tabs {
+    display: flex;
+    /* border: 1px solid #ccc; */
+    /* border-bottom: none; */
+}
+
+.pdf {
+    border-radius: 22px;
+    border-color: grey;
+}
+
+.tabb {
+    margin-top: 0px !important;
+}
+
+.round {
+    height: 40%;
+    width: 40%;
+}
+
+.tab {
+    padding: 12px 20px;
+    cursor: pointer;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    background-color: #f6f6f6;
+    /* width: 150px; adjust as needed */
+    text-align: center;
+}
+
+    .tab.active {
+        border-bottom: none;
+        border-right: none;
+        border-left: none;
+        background-color: #fff;
+    }
+
+    .tab:hover {
+        background: #fff;
+    }
+
+    .tab.active:first-child {
+        border-left: 1px solid #ccc;
+    }
+
+    .tab.active:last-child {
+        border-right: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+    }
+
+.active {
+    display: block;
+}
+
+.tab-content {
+    background-color: #fff;
+}
+
+.tab-content-item {
+    border: 1px solid #ccc;
+    display: none;
+    max-width: 100%;
+    margin-top: -1px;
+    padding-inline: 20px;
+}
+
+    .tab-content-item.active {
+        display: block;
+    }
+/*Tab CSS Ends above*/
+
+
+/* JEET CSS */
+
+.thumb-cont {
+    position: relative;
+    padding: 0 7px;
+}
+
+/* / Hide the images by default / */
+.mySlides {
+    display: none;
+    /*  width: 550px;
+  height: 400px;*/
+}
+
+/* / Add a pointer when hovering over the thumbnail images / */
+.cursor {
+    cursor: pointer;
+}
+
+hr {
+    flex: 1;
+    border: 1px solid grey;
+    height: 2px;
+    background-color: black;
+}
+
+.date-btn {
+    border-radius: 22px;
+    background-color: white;
+    width: auto;
+    border: 1px solid #E8E8E8;
+}
+/* / Next & previous buttons / */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 3px;
+    padding: 5px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 5.4rem;
+    padding-top: 1.8rem;
+    width: 10px !important;
+}
+
+
+
+
+/* / Position the "next button" to the right / */
+.next {
+    position: absolute;
+    right: 0.6rem;
+    /* border-radius: 3px 0 0 3px;*/
+}
+
+.prev {
+    position: absolute;
+    left: 11px;
+}
+
+    /* / On hover, add a black background color with a little bit see-through / */
+    .prev:hover,
+    .next:hover {
+        /*   background-color: rgba(0, 0, 0, 0.8);*/
+    }
+
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* / Six columns side by side / */
+.column1 {
+    float: left;
+    width: 16.66%;
+}
+
+/* / Add a transparency effect for thumnbail images  */
+.demo {
+    opacity: 0.6;
+    height: 85px;
+}
+
+    .active,
+    .demo:hover {
+        opacity: 1;
+    }
+
+.btn-like-share {
+    border: 2px solid #757575 !important;
+    border-radius: 25px !important;
+}
+
+
+.checked {
+    color: orange;
+}
+
+.btnApply {
+    border-color: #F88634 !important;
+    color: #F88634 !important;
+    padding: 5px;
+    width: 150px;
+    border-style: solid;
+    background-color: white;
+}
+
+    .btnApply:hover {
+        background-color: #F88634 !important;
+        color: white !important;
+    }
+
+.MissionGoal {
+    color: grey;
+}
+
+.list-group {
+    max-height: 400px;
+    margin-bottom: 10px;
+    overflow: scroll;
+}
+
+.column2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.carBtn {
+    height: 1.5rem;
+    margin-top: 20rem;
+    background-color: black !important;
+}
+
+.carContent {
+    position: relative;
+}
+
+.volunteerCount {
+    position: absolute;
+    top: 20rem;
+    left: 5rem;
+}
+
+
+/*card image setting*/
+
+/*CARD*/
+.card-img {
+    position: relative;
+}
+
+.pin {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.514);
+    border-radius: 50px;
+    top: 15px;
+    right: 10px;
+}
+
+.heart {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.514);
+    border-radius: 50%;
+    top: 100px;
+    right: 12px;
+}
+
+.share {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.514);
+    border-radius: 50%;
+    top: 150px;
+    right: 12px;
+}
+
+.env {
+    position: absolute;
+    color: #7d7d7d;
+    background-color: white;
+    border-radius: 40px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    bottom: -16px;
+}
+/*card*/
+
+
+
+

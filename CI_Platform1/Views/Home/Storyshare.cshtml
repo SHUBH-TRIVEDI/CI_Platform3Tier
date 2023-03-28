@@ -1,0 +1,100 @@
+﻿@using CI_Entities1.Models
+
+
+<partial name="Navbar1" />
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Story</title>
+    <script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
+    @*    <link rel="stylesheet" href="/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">*@
+    <link rel="stylesheet" type="text/css" href="~/css/StoryShare.css" asp-append-version="true">
+</head>
+
+<body>
+    <hr />
+    <div class="container">
+        <div class="mt-2 fs-2">
+            Share Your Story
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-4">
+                <div>Select Mission</div>
+                <div class="mb-3">
+                    <select class="form-select col-11 heigh">
+                        <option>Enable select</option>
+                        <option>Disabled select</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div>My Story Title</div>
+                <div><input class="col-11 heigh" type="text" placeholder="Enter Story Title"></div>
+            </div>
+
+            <div class="col-4">
+                <div>Date</div>
+                <div><input class="col-11 heigh" type="date" placeholder="Select Date"></div>
+            </div>
+        </div>
+
+        <div>My Story</div>
+        <div class="col-12 mt-2">
+<textarea class="col-12" name="editor1"></textarea>
+        </div>
+
+        <div class="mt-3">Enter Video Url</div>
+        <div>
+            <input type="text" class="col-12 heigh" placeholder="Enter Your url">
+        </div>
+
+        <div class="mt-3">Upload Your Photos</div>
+        <div>
+            <form class="form">
+                <label class="form__container" id="upload-container">
+
+                    Drag & Drop Pictures and Videos Here
+                    <input class="form__file" id="upload-files" type="file" multiple="multiple" />
+                </label>
+                <div id="files-list-container"></div>
+            </form>
+        </div>
+
+        <div class="d-flex bd-highlight mb-3">
+            <div class="me-auto p-2">
+                <button type="button" class="btn btn-outline-secondary px-3 me-auto" style="border-radius: 22px;">
+                    Cancel
+                </button>
+            </div>
+            <div class="p-2">
+                <button type="button"
+                        class="btn btn-outline-secondary cardbtn px-3 ">
+                    Save
+                </button>
+            </div>
+            <div class="p-2">
+                <button type="button"
+                        class="btn btn-outline-secondary cardbtn px-3">
+                    Submit
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <script src="~/js/StoryShare.js" asp-append-version="true"></script>
+    @*<script src="/JS/bootstrap.bundle.min.js"></script>*@
+
+
+</body>
+
+</html>

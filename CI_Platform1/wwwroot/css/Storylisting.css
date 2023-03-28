@@ -1,0 +1,92 @@
+﻿.addstorybg {
+    background: url(/Images/Grow-Trees-On-the-path-to-environment-sustainability-login.png) center/cover;
+    z-index: 1;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+    .addstorybg::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(60deg, #29323c, #485563 100%);
+        opacity: 0.6;
+        z-index: -1;
+    }
+
+.cardbtn {
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+.vertical {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.verticalimg {
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.rule {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+}
+
+hr {
+    flex: 1;
+    border: none;
+    height: 2px;
+    background: black;
+}
+
+.hrbtn-img {
+    background-color: white !important;
+    border: none;
+    border-radius: 22px;
+    color: #414141;
+    z-index: 1;
+    margin-top: 10px;
+}
+
+#change:hover .btn-view {
+    display: block;
+}
+
+.btn-view {
+    border-radius: 22px;
+    display: none;
+    position: absolute;
+    bottom: 45%;
+    left: 45%;
+}
+
+#change:hover .missionimg {
+    z-index: -1;
+    opacity: 0.8;
+}
+
+.page-link:hover {
+    background-color: #fd7e14;
+    color: white !important;
+}
+
+@media screen and (min-width:330px) and (max-width:720px) {
+    .verticalimg {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

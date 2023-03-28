@@ -1,0 +1,50 @@
+﻿/*card*/
+.card-img {
+    position: relative;
+}
+
+.pin {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.514);
+    border-radius: 50px;
+    top: 15px;
+    right: 10px;
+}
+
+.heart {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.514);
+    border-radius: 50%;
+    top: 100px;
+    right: 12px;
+}
+
+.share {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.514);
+    border-radius: 50%;
+    top: 150px;
+    right: 12px;
+}
+
+.env {
+    position: absolute;
+    color: #7d7d7d;
+    background-color: white;
+    border-radius: 40px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    bottom: -16px;
+}
+/*card*/
+
+.sort {
+    width: 11rem;
+    margin-left: auto;
+}
+
+.sortby {
+    margin-left: auto;
+}

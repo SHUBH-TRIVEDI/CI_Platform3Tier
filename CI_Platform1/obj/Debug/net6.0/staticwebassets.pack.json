@@ -1,0 +1,725 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CI_Platform1.bundle.scp.css",
+      "PackagePath": "staticwebassets\\CI_Platform1.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\css\\Missions.css",
+      "PackagePath": "staticwebassets\\css\\Missions.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\css\\Nav1.css",
+      "PackagePath": "staticwebassets\\css\\Nav1.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\css\\Navbar2.css",
+      "PackagePath": "staticwebassets\\css\\Navbar2.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\css\\StoryShare.css",
+      "PackagePath": "staticwebassets\\css\\StoryShare.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\css\\Storylisting.css",
+      "PackagePath": "staticwebassets\\css\\Storylisting.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\css\\Style.css",
+      "PackagePath": "staticwebassets\\css\\Style.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\css\\registration.css",
+      "PackagePath": "staticwebassets\\css\\registration.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\css\\volunteering.css",
+      "PackagePath": "staticwebassets\\css\\volunteering.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\404-Page-image.png",
+      "PackagePath": "staticwebassets\\images\\404-Page-image.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\Already-volunteered.png",
+      "PackagePath": "staticwebassets\\images\\Already-volunteered.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\Animal-welfare-&-save-birds-campaign-1.png",
+      "PackagePath": "staticwebassets\\images\\Animal-welfare-&-save-birds-campaign-1.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\Animal-welfare-&-save-birds-campaign.png",
+      "PackagePath": "staticwebassets\\images\\Animal-welfare-&-save-birds-campaign.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\CIPLATFORM.xlsx",
+      "PackagePath": "staticwebassets\\images\\CIPLATFORM.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\CSR-initiative-stands-for-Coffee--and-Farmer-Equity-1.png",
+      "PackagePath": "staticwebassets\\images\\CSR-initiative-stands-for-Coffee--and-Farmer-Equity-1.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\CSR-initiative-stands-for-Coffee--and-Farmer-Equity-2.png",
+      "PackagePath": "staticwebassets\\images\\CSR-initiative-stands-for-Coffee--and-Farmer-Equity-2.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\CSR-initiative-stands-for-Coffee--and-Farmer-Equity-3.png",
+      "PackagePath": "staticwebassets\\images\\CSR-initiative-stands-for-Coffee--and-Farmer-Equity-3.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\CSR-initiative-stands-for-Coffee--and-Farmer-Equity-4.png",
+      "PackagePath": "staticwebassets\\images\\CSR-initiative-stands-for-Coffee--and-Farmer-Equity-4.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\CSR-initiative-stands-for-Coffee--and-Farmer-Equity-5.png",
+      "PackagePath": "staticwebassets\\images\\CSR-initiative-stands-for-Coffee--and-Farmer-Equity-5.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\CSR-initiative-stands-for-Coffee--and-Farmer-Equity-6.png",
+      "PackagePath": "staticwebassets\\images\\CSR-initiative-stands-for-Coffee--and-Farmer-Equity-6.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\CSR-initiative-stands-for-Coffee--and-Farmer-Equity.png",
+      "PackagePath": "staticwebassets\\images\\CSR-initiative-stands-for-Coffee--and-Farmer-Equity.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\Education-Supplies-for-Every--Pair-of-Shoes-Sold-1.png",
+      "PackagePath": "staticwebassets\\images\\Education-Supplies-for-Every--Pair-of-Shoes-Sold-1.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\Education-Supplies-for-Every--Pair-of-Shoes-Sold-2.png",
+      "PackagePath": "staticwebassets\\images\\Education-Supplies-for-Every--Pair-of-Shoes-Sold-2.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\Education-Supplies-for-Every--Pair-of-Shoes-Sold.png",
+      "PackagePath": "staticwebassets\\images\\Education-Supplies-for-Every--Pair-of-Shoes-Sold.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\Grow-Trees-On-the-path-to-environment-sustainability-1.png",
+      "PackagePath": "staticwebassets\\images\\Grow-Trees-On-the-path-to-environment-sustainability-1.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\Grow-Trees-On-the-path-to-environment-sustainability-2.png",
+      "PackagePath": "staticwebassets\\images\\Grow-Trees-On-the-path-to-environment-sustainability-2.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\Grow-Trees-On-the-path-to-environment-sustainability-3.png",
+      "PackagePath": "staticwebassets\\images\\Grow-Trees-On-the-path-to-environment-sustainability-3.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\Grow-Trees-On-the-path-to-environment-sustainability-4.png",
+      "PackagePath": "staticwebassets\\images\\Grow-Trees-On-the-path-to-environment-sustainability-4.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\Grow-Trees-On-the-path-to-environment-sustainability-5.png",
+      "PackagePath": "staticwebassets\\images\\Grow-Trees-On-the-path-to-environment-sustainability-5.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\Grow-Trees-On-the-path-to-environment-sustainability-login.png",
+      "PackagePath": "staticwebassets\\images\\Grow-Trees-On-the-path-to-environment-sustainability-login.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\Grow-Trees-On-the-path-to-environment-sustainability.png",
+      "PackagePath": "staticwebassets\\images\\Grow-Trees-On-the-path-to-environment-sustainability.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\Nourish-the-Children-in--African-country-1.png",
+      "PackagePath": "staticwebassets\\images\\Nourish-the-Children-in--African-country-1.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\Nourish-the-Children-in--African-country.png",
+      "PackagePath": "staticwebassets\\images\\Nourish-the-Children-in--African-country.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\Open-Volunteering-Requests.png",
+      "PackagePath": "staticwebassets\\images\\Open-Volunteering-Requests.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\Plantation-and-Afforestation-programme-1.png",
+      "PackagePath": "staticwebassets\\images\\Plantation-and-Afforestation-programme-1.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\Plantation-and-Afforestation-programme.png",
+      "PackagePath": "staticwebassets\\images\\Plantation-and-Afforestation-programme.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\README.md",
+      "PackagePath": "staticwebassets\\images\\README.md"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\Seats-left.png",
+      "PackagePath": "staticwebassets\\images\\Seats-left.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\achieved.png",
+      "PackagePath": "staticwebassets\\images\\achieved.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\add.png",
+      "PackagePath": "staticwebassets\\images\\add.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\add1.png",
+      "PackagePath": "staticwebassets\\images\\add1.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\arrow.png",
+      "PackagePath": "staticwebassets\\images\\arrow.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\bell-big.png",
+      "PackagePath": "staticwebassets\\images\\bell-big.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\bell.png",
+      "PackagePath": "staticwebassets\\images\\bell.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\bin.png",
+      "PackagePath": "staticwebassets\\images\\bin.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\calender.png",
+      "PackagePath": "staticwebassets\\images\\calender.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\cancel.png",
+      "PackagePath": "staticwebassets\\images\\cancel.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\cancel1.png",
+      "PackagePath": "staticwebassets\\images\\cancel1.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\checked.png",
+      "PackagePath": "staticwebassets\\images\\checked.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\cross.png",
+      "PackagePath": "staticwebassets\\images\\cross.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\deadline.png",
+      "PackagePath": "staticwebassets\\images\\deadline.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\doc.png",
+      "PackagePath": "staticwebassets\\images\\doc.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\down.png",
+      "PackagePath": "staticwebassets\\images\\down.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\drag-and-drop.png",
+      "PackagePath": "staticwebassets\\images\\drag-and-drop.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\drop-down.png",
+      "PackagePath": "staticwebassets\\images\\drop-down.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\eye.png",
+      "PackagePath": "staticwebassets\\images\\eye.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\facebook.png",
+      "PackagePath": "staticwebassets\\images\\facebook.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\filter.png",
+      "PackagePath": "staticwebassets\\images\\filter.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\gift.png",
+      "PackagePath": "staticwebassets\\images\\gift.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\graph.png",
+      "PackagePath": "staticwebassets\\images\\graph.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\grid.png",
+      "PackagePath": "staticwebassets\\images\\grid.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\heart.png",
+      "PackagePath": "staticwebassets\\images\\heart.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\heart1.png",
+      "PackagePath": "staticwebassets\\images\\heart1.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\hours.png",
+      "PackagePath": "staticwebassets\\images\\hours.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\image.png",
+      "PackagePath": "staticwebassets\\images\\image.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\image1.png",
+      "PackagePath": "staticwebassets\\images\\image1.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\image2.png",
+      "PackagePath": "staticwebassets\\images\\image2.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\img.png",
+      "PackagePath": "staticwebassets\\images\\img.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\img1.png",
+      "PackagePath": "staticwebassets\\images\\img1.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\img11.png",
+      "PackagePath": "staticwebassets\\images\\img11.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\img2.png",
+      "PackagePath": "staticwebassets\\images\\img2.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\img22.png",
+      "PackagePath": "staticwebassets\\images\\img22.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\img3.png",
+      "PackagePath": "staticwebassets\\images\\img3.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\img33.png",
+      "PackagePath": "staticwebassets\\images\\img33.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\info.png",
+      "PackagePath": "staticwebassets\\images\\info.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\left.png",
+      "PackagePath": "staticwebassets\\images\\left.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\left1.png",
+      "PackagePath": "staticwebassets\\images\\left1.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\linkedin.png",
+      "PackagePath": "staticwebassets\\images\\linkedin.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\list.png",
+      "PackagePath": "staticwebassets\\images\\list.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\mission.png",
+      "PackagePath": "staticwebassets\\images\\mission.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\my-story.png",
+      "PackagePath": "staticwebassets\\images\\my-story.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\new-message.png",
+      "PackagePath": "staticwebassets\\images\\new-message.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\next.png",
+      "PackagePath": "staticwebassets\\images\\next.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\organization.png",
+      "PackagePath": "staticwebassets\\images\\organization.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\pdf.png",
+      "PackagePath": "staticwebassets\\images\\pdf.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\pin.png",
+      "PackagePath": "staticwebassets\\images\\pin.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\pin1.png",
+      "PackagePath": "staticwebassets\\images\\pin1.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\previous.png",
+      "PackagePath": "staticwebassets\\images\\previous.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\right-arrow.png",
+      "PackagePath": "staticwebassets\\images\\right-arrow.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\right-arrow1.png",
+      "PackagePath": "staticwebassets\\images\\right-arrow1.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\right-arrow2.png",
+      "PackagePath": "staticwebassets\\images\\right-arrow2.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\right-white.png",
+      "PackagePath": "staticwebassets\\images\\right-white.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\right.png",
+      "PackagePath": "staticwebassets\\images\\right.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\search.png",
+      "PackagePath": "staticwebassets\\images\\search.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\selected-star.png",
+      "PackagePath": "staticwebassets\\images\\selected-star.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\settings.png",
+      "PackagePath": "staticwebassets\\images\\settings.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\star-empty.png",
+      "PackagePath": "staticwebassets\\images\\star-empty.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\star.png",
+      "PackagePath": "staticwebassets\\images\\star.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\twitter.png",
+      "PackagePath": "staticwebassets\\images\\twitter.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\up.png",
+      "PackagePath": "staticwebassets\\images\\up.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\user-img.png",
+      "PackagePath": "staticwebassets\\images\\user-img.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\user.png",
+      "PackagePath": "staticwebassets\\images\\user.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\user1.png",
+      "PackagePath": "staticwebassets\\images\\user1.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\volunteer1.png",
+      "PackagePath": "staticwebassets\\images\\volunteer1.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\volunteer2.png",
+      "PackagePath": "staticwebassets\\images\\volunteer2.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\volunteer3.png",
+      "PackagePath": "staticwebassets\\images\\volunteer3.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\volunteer4.png",
+      "PackagePath": "staticwebassets\\images\\volunteer4.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\volunteer5.png",
+      "PackagePath": "staticwebassets\\images\\volunteer5.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\volunteer6.png",
+      "PackagePath": "staticwebassets\\images\\volunteer6.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\volunteer7.png",
+      "PackagePath": "staticwebassets\\images\\volunteer7.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\volunteer8.png",
+      "PackagePath": "staticwebassets\\images\\volunteer8.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\images\\volunteer9.png",
+      "PackagePath": "staticwebassets\\images\\volunteer9.png"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\js\\StoryShare.js",
+      "PackagePath": "staticwebassets\\js\\StoryShare.js"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\js\\Storydetail.js",
+      "PackagePath": "staticwebassets\\js\\Storydetail.js"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\js\\volunteering.js",
+      "PackagePath": "staticwebassets\\js\\volunteering.js"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\JAY SHUBH\\OneDrive\\Desktop\\CI_Platform-net\\CI_Platform_.net - Copy\\CI_Platform1\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.CI_Platform1.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.CI_Platform1.props",
+      "PackagePath": "build\\CI_Platform1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.CI_Platform1.props",
+      "PackagePath": "buildMultiTargeting\\CI_Platform1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.CI_Platform1.props",
+      "PackagePath": "buildTransitive\\CI_Platform1.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

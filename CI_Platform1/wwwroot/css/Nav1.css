@@ -1,0 +1,263 @@
+﻿input#Search {
+    background-image: url(../images/search-icon.svg);
+    background-repeat: no-repeat;
+    text-indent: 20px;
+    background-size: 30px 20px;
+    background-position: left;
+}
+
+    input#Search:focus {
+        background-image: none;
+    }
+
+.FilterBar {
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+.LiBorder {
+    /*    outline: 1px solid #000;
+*/
+
+    border-left: 1px solid grey;
+    /*    border-right: 1px thin grey;
+*/
+}
+
+.dropdown_btn {
+    border: none !important;
+    box-shadow: none !important;
+    color: grey !important;
+}
+
+/*$offcanvas-horizontal-width: 400px;
+*/
+
+.offcanvas-end {
+    width: 250px !important;
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+
+
+
+
+/*card css*/
+
+
+@media screen and (max-width:420px) {
+    .profile {
+        display: none;
+    }
+}
+
+
+/*              card css */
+.cardbtn {
+    border: 1px solid #fd7e14;
+    border-radius: 22px;
+    /* justify-self: center; */
+}
+
+    .cardbtn span {
+        color: #fd7e14;
+    }
+
+.star {
+    height: 1rem;
+    width: 1rem;
+}
+
+.rule {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+}
+
+hr {
+    flex: 1;
+    border: none;
+    height: 2px;
+    background: black;
+}
+
+.seat {
+    font-size: 0.7rem;
+}
+
+
+.hrbtn {
+    background-color: white !important;
+    border: 0.1rem solid rgb(184, 184, 184);
+    border-radius: 22px;
+    /* color: grey; */
+}
+
+
+/*   extra images    css */
+.cardbtn {
+    border: 1px solid #fd7e14;
+    border-radius: 22px;
+}
+
+    .cardbtn span {
+        color: #fd7e14;
+    }
+
+.star {
+    height: 1rem;
+    width: 1rem;
+}
+
+.rule {
+    display: flex;
+    flex-direction: row;
+}
+
+
+hr {
+    flex: 1;
+    border: none;
+    height: 2px;
+    background: black;
+}
+
+.seat {
+    font-size: 0.7rem;
+}
+
+.hrbtn-img {
+    background-color: white !important;
+    border: none;
+    border-radius: 22px;
+    color: #414141;
+    z-index: 1;
+}
+
+.hrbtn {
+    background-color: white !important;
+    border: 0.1rem solid rgb(184, 184, 184);
+    border-radius: 22px;
+    color: #414141;
+    font-size: .8rem;
+}
+
+.img-btn {
+    background: #000000 0% 0% no-repeat padding-box;
+    opacity: 0.5;
+    border-radius: 18px;
+    width: fit-content;
+    padding: 0 6px;
+    width: 6rem;
+    height: 2rem;
+    margin-left: -7rem;
+    margin-top: 1rem !important;
+}
+
+    .img-btn p {
+        color: #FFFFFF;
+    }
+
+.img-btn-2 {
+    background: #000000 0% 0% no-repeat padding-box;
+    opacity: 0.5;
+    border-radius: 50%;
+    width: fit-content;
+    margin-left: -3rem;
+    margin-top: 10rem !important;
+}
+
+.img-btn-3 {
+    background: #000000 0% 0% no-repeat padding-box;
+    opacity: 0.5;
+    border-radius: 50%;
+    width: fit-content;
+    margin-left: -3rem;
+    margin-top: 13rem !important;
+}
+
+
+
+/*      full card css     */
+
+.card {
+    margin-bottom: 1rem;
+}
+
+.list-view .row > [class*=col-] {
+    max-width: 100%;
+    flex: 0 0 100%;
+}
+
+.list-view .card {
+    flex-direction: row;
+}
+
+@media (max-width: 575.98px) {
+    .list-view .card {
+        flex-direction: column;
+    }
+}
+
+.list-view .card > .card-img-top {
+    width: auto;
+}
+
+.list-view .card .card-body {
+    display: inline-block;
+}
+
+
+
+
+
+
+/ inside card location, person, heart /
+
+.c1-location {
+    / position: absolute;
+    / top: 10px;
+    right: 10px;
+    border-radius: 1rem;
+    background-color: rgb(0, 0, 0, 0.35);
+    color: white;
+}
+
+.card-img-top {
+    height: 100%;
+    object-fit: cover;
+}
+
+.c1-heart {
+    bottom: 70px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0, 0.35);
+}
+
+.c1-person {
+    bottom: 20px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0, 0.35);
+}
+
+#mission-deadline {
+    / background-color: white;
+    / top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#mission-theme {
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+}

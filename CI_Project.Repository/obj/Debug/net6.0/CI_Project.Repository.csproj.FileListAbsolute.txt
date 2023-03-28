@@ -1,0 +1,45 @@
+C:\Users\tatva\Desktop\Tatvasoft Projects\CI_Platform_.net - Copy\CI_Project.Repository\bin\Debug\net6.0\CI_Project.Repository.deps.json
+C:\Users\tatva\Desktop\Tatvasoft Projects\CI_Platform_.net - Copy\CI_Project.Repository\bin\Debug\net6.0\CI_Project.Repository.dll
+C:\Users\tatva\Desktop\Tatvasoft Projects\CI_Platform_.net - Copy\CI_Project.Repository\bin\Debug\net6.0\ref\CI_Project.Repository.dll
+C:\Users\tatva\Desktop\Tatvasoft Projects\CI_Platform_.net - Copy\CI_Project.Repository\bin\Debug\net6.0\CI_Project.Repository.pdb
+C:\Users\tatva\Desktop\Tatvasoft Projects\CI_Platform_.net - Copy\CI_Project.Repository\bin\Debug\net6.0\CI_Entities1.dll
+C:\Users\tatva\Desktop\Tatvasoft Projects\CI_Platform_.net - Copy\CI_Project.Repository\bin\Debug\net6.0\CI_Entities1.pdb
+C:\Users\tatva\Desktop\Tatvasoft Projects\CI_Platform_.net - Copy\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.csproj.AssemblyReference.cache
+C:\Users\tatva\Desktop\Tatvasoft Projects\CI_Platform_.net - Copy\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tatva\Desktop\Tatvasoft Projects\CI_Platform_.net - Copy\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.AssemblyInfoInputs.cache
+C:\Users\tatva\Desktop\Tatvasoft Projects\CI_Platform_.net - Copy\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.AssemblyInfo.cs
+C:\Users\tatva\Desktop\Tatvasoft Projects\CI_Platform_.net - Copy\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.csproj.CoreCompileInputs.cache
+C:\Users\tatva\Desktop\Tatvasoft Projects\CI_Platform_.net - Copy\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.csproj.CopyComplete
+C:\Users\tatva\Desktop\Tatvasoft Projects\CI_Platform_.net - Copy\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.dll
+C:\Users\tatva\Desktop\Tatvasoft Projects\CI_Platform_.net - Copy\CI_Project.Repository\obj\Debug\net6.0\ref\CI_Project.Repository.dll
+C:\Users\tatva\Desktop\Tatvasoft Projects\CI_Platform_.net - Copy\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.pdb
+C:\Users\JAY SHUBH\OneDrive\Desktop\CI_Platform-net\CI_Platform_.net - Copy\CI_Project.Repository\bin\Debug\net6.0\CI_Project.Repository.deps.json
+C:\Users\JAY SHUBH\OneDrive\Desktop\CI_Platform-net\CI_Platform_.net - Copy\CI_Project.Repository\bin\Debug\net6.0\CI_Project.Repository.dll
+C:\Users\JAY SHUBH\OneDrive\Desktop\CI_Platform-net\CI_Platform_.net - Copy\CI_Project.Repository\bin\Debug\net6.0\CI_Project.Repository.pdb
+C:\Users\JAY SHUBH\OneDrive\Desktop\CI_Platform-net\CI_Platform_.net - Copy\CI_Project.Repository\bin\Debug\net6.0\CI_Entities1.dll
+C:\Users\JAY SHUBH\OneDrive\Desktop\CI_Platform-net\CI_Platform_.net - Copy\CI_Project.Repository\bin\Debug\net6.0\CI_Entities1.pdb
+C:\Users\JAY SHUBH\OneDrive\Desktop\CI_Platform-net\CI_Platform_.net - Copy\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.csproj.AssemblyReference.cache
+C:\Users\JAY SHUBH\OneDrive\Desktop\CI_Platform-net\CI_Platform_.net - Copy\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JAY SHUBH\OneDrive\Desktop\CI_Platform-net\CI_Platform_.net - Copy\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.AssemblyInfoInputs.cache
+C:\Users\JAY SHUBH\OneDrive\Desktop\CI_Platform-net\CI_Platform_.net - Copy\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.AssemblyInfo.cs
+C:\Users\JAY SHUBH\OneDrive\Desktop\CI_Platform-net\CI_Platform_.net - Copy\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.csproj.CoreCompileInputs.cache
+C:\Users\JAY SHUBH\OneDrive\Desktop\CI_Platform-net\CI_Platform_.net - Copy\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.csproj.CopyComplete
+C:\Users\JAY SHUBH\OneDrive\Desktop\CI_Platform-net\CI_Platform_.net - Copy\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.dll
+C:\Users\JAY SHUBH\OneDrive\Desktop\CI_Platform-net\CI_Platform_.net - Copy\CI_Project.Repository\obj\Debug\net6.0\refint\CI_Project.Repository.dll
+C:\Users\JAY SHUBH\OneDrive\Desktop\CI_Platform-net\CI_Platform_.net - Copy\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.pdb
+C:\Users\JAY SHUBH\OneDrive\Desktop\CI_Platform-net\CI_Platform_.net - Copy\CI_Project.Repository\obj\Debug\net6.0\ref\CI_Project.Repository.dll
+C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Project.Repository\bin\Debug\net6.0\CI_Project.Repository.deps.json
+C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Project.Repository\bin\Debug\net6.0\CI_Project.Repository.dll
+C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Project.Repository\bin\Debug\net6.0\ref\CI_Project.Repository.dll
+C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Project.Repository\bin\Debug\net6.0\CI_Project.Repository.pdb
+C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Project.Repository\bin\Debug\net6.0\CI_Entities1.dll
+C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Project.Repository\bin\Debug\net6.0\CI_Entities1.pdb
+C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.csproj.AssemblyReference.cache
+C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.AssemblyInfoInputs.cache
+C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.AssemblyInfo.cs
+C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.csproj.CoreCompileInputs.cache
+C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.csproj.CopyComplete
+C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.dll
+C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Project.Repository\obj\Debug\net6.0\ref\CI_Project.Repository.dll
+C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Project.Repository\obj\Debug\net6.0\CI_Project.Repository.pdb

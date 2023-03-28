@@ -1,0 +1,84 @@
+﻿@using CI_Entities1.Models.NewFolder
+@model Storylist
+
+<partial name="Navbar1" />
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="~/css/Storylisting.css" asp-append-version="true">
+</head>
+
+<body>
+
+    <div class="addstorybg mt-3" style="height: 390px;">
+        <div class="text-center ">
+            <div class="mx-auto mt-5 vertical" style="width: 50vw;">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, numquam. Optio quasi tenetur natus, ut
+                in sit eum veritatis quas sapiente,
+                sint modi voluptatem eius ius officia quam tenetur.
+            </div>
+            <div class="text-center mt-3   verticalimg">
+                <a asp-controller="Home" asp-action="Storyshare" class="btn cardbtn mx-auto "><span style="color: white;">Share Your Story</span><i
+                        class="bi bi-arrow-right ms-2 mt-3 " style="color: white;"></i> </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container grid-container">
+        <div class="row mt-3 mb-3">
+            @foreach(var item in Model.Stories)
+            {
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="d-inline imgdiv position-relative">
+                        <div id="change">
+                            <img src="/Images/Grow-Trees-On-the-path-to-environment-sustainability-login.png"
+                                class="card-img-top missionimg" alt="...">
+                            <button class="btn cardbtn btn-view" onclick="viewdetails()"> 
+                                <a asp-controller="Home" asp-action="StoryDetail" class="text-decoration-none text-black">View details </a><i
+                                    class="bi bi-arrow-right ms-2 mt-3 "></i></button>
+                            <div class="rule" style="margin-top:-20px !important;">
+                                <hr>
+                                <button class="hrbtn-img"></button>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Title</h5>
+                        <p class="card-text text-secondary">@item.Description</p>
+
+                        <div class="col column2"><img src="../Images/volunteer4.png" class="rounded-circle me-1"
+                                style="height:30px;width:30px" /></div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

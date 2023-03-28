@@ -1,0 +1,678 @@
+﻿@using CI_Entities1.Models
+
+<partial name="Navbar1" />
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/css/volunteering.css" asp-append-version="true">
+</head>
+
+<body>
+
+
+    <div class="container mt-3">
+        <div class="row ">
+            <div class="col-12 col-lg-6 col-md-12 col-sm-12  p-1">
+
+                <!-- Full-width images with number text -->
+                <div class="mySlides" style="display: none;">
+                    <div class="numbertext">1 / 4</div>
+                    <img src="~/Images/CSR-initiative-stands-for-Coffee--and-Farmer-Equity-3.png"
+                         style="width:100%; height: 54vh;">
+                </div>
+
+                <div class="mySlides" style="display: none;">
+                    <div class="numbertext">2 / 4</div>
+                    <img src="~/images/img1.png" style="width:100%; height: 54vh;">
+                </div>
+
+                <div class="mySlides" style="display: none;">
+                    <div class="numbertext">3 / 4</div>
+                    <img src="~/Images/Grow-Trees-On-the-path-to-environment-sustainability-2.png"
+                         style="width:100%; height: 54vh;">
+                </div>
+
+                <div class="mySlides" style="display: block;">
+                    <div class="numbertext">4 / 4</div>
+                    <img src="/Images/img11.png" style="width:100%; height: 54vh;">
+                </div>
+
+                <!-- Thumbnail images -->
+                <div class="row mt-3">
+                    <div class="column" style="width:25%">
+                        <img class="demo cursor"
+                             src="~/images/CSR-initiative-stands-for-Coffee--and-Farmer-Equity-1.png" style="width:100%"
+                             onclick="currentSlide(1)" alt="The Woods">
+                    </div>
+                    <div class="column" style="width:25%">
+                        <img class="demo cursor" src="~/images/img1.png" style="width:100%" onclick="currentSlide(2)"
+                             alt="Cinque Terre">
+                    </div>
+                    <div class="column" style="width:25%">
+                        <img class="demo cursor"
+                             src="~/images/Grow-Trees-On-the-path-to-environment-sustainability-login.png"
+                             style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+                    </div>
+                    <div class="column" style="width:25%">
+                        <img class="demo cursor active" src="~/images/img11.png" style="width:100%"
+                             onclick="currentSlide(4)" alt="Northern Lights">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6 col-md-12 col-sm-12 p-4 ">
+                <div class="font fs-1">@ViewBag.Missiondetail.Title</div>
+                <div class="font fs-5 mt-2 ">
+                    @ViewBag.Missiondetail.ShortDescription
+                </div>
+
+                <div class="rule mt-3">
+                    <hr>
+                    <button class="hrbtn">
+                        Plant 10,000 Trees
+                    </button>
+                    <hr>
+                </div>
+
+                <div class="d-flex flex-row justify-content-between">
+                    <div class="d-flex flex-row align-items-center ms-5">
+                        <img src="~/images/Seats-left.png" alt="" class="" height="30px" width="30px">
+                        <div class="d-flex flex-column ms-2">
+                            <p class="d-inline mb-0 pt-2">@ViewBag.Missiondetail.Availability</p>
+                            <p class="seat">Seats Left</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center">
+                        <img src="~/images/mission.png" height="33px" width="33px" alt="">
+                        <div class="d-flex flex-column ms-2">
+                            <!-- <p class=" mb-0 pt-2">12/03/2023 </p> -->
+                            <div class="progress mt-3 bar me-4">
+                                <div class="progress-bar d-inline pt-2" role="progressbar" style="width: 75%"
+                                     aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="seat">8000 Achieved</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <hr>
+                @*//Reccomend to Coworker*@
+                <div class="row addFav">
+                    @*  <button class="btn col ton me-3" type="button" onclick="Fav()">
+                        <i class="bi bi-heart"></i>
+                        <span>Add to Favourite</span>
+                        </button>
+                        col  col-11  col-xl-5 col-lg-11 col-md-5 col   me-xl-4  me-md-4 rounded-5 d-flex   Addfavourite   justify-content-center
+                    *@
+
+                    @if (ViewBag.fav == null)
+                    {
+                        <button class="btn col ton me-3 Addfavourite" onclick="addToFav(@ViewBag.Missiondetail.MissionId)">
+                            <i class="bi bi-heart" id="heart"></i>
+                            <label class="ms-2" id="favmissiondiv">ADD to Favourite</label>
+                        </button>
+                    }
+                    else
+                    {
+                        <button class="btn col ton me-3 Addfavourite" onclick="addToFav(@ViewBag.Missiondetail.MissionId)">
+                            <span id="boot-icon" class="bi bi-heart-fill" style="font-size: 20px; color: rgb(255, 0, 0);"></span>
+                            <label class="ms-2" id="favmissiondiv" style="color:red;">Remove From Favourite</label>
+                        </button>
+                    }
+
+
+
+
+                    <button class="btn col ton Addfavourite" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <i class="bi bi-square-fill"></i>
+                        <span class="font-si">Recommend to a Co-Worker</span>
+                    </button>
+
+                    <div class="modal fade modal-dialog-scrollable" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Send Recommend TO</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body overflow-y-auto" style="height:200px;">
+                                    @foreach (var user in ViewBag.alluser)
+                                    {
+
+                                        <div class="d-flex my-3 bg-light ">
+                                            <img src="~/images/volunteer1.png" class="rounded-5 me-5" style="border-radius:50%;width:50px;height:50px">
+                                            <label class=" ms-4 mt-2 me-auto"> @user.FirstName @user.LastName </label>
+                                            <input class="form-check-input me-2 mt-2" type="checkbox" value="" id=@user.UserId name="mail">
+                                        </div>
+
+                                    }
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" id="sendmail" onclick="sendmail(@ViewBag.Missiondetail.MissionId)">Send Mission</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @*RAting*@
+                @*                <div class="rule mt-3">
+                    <hr>
+                    <button class="hrbtn">
+
+                    <div class="text-center">
+                    @if (ViewBag.Missiondetail.UserPrevRating != null)
+                    {
+                    @for (var i = 1; i <= int.Parse(ViewBag.Missiondetail.UserPrevRating); i++)
+                    {
+                    <i class="bi bi-star-fill star star-@i" style="color:#F88634;" id="@i" onclick="ratemission(this.id,@ViewBag.Missiondetail.MissionId, @ViewBag.user.UserId)"></i>
+                    }
+                    @for (var i = int.Parse(ViewBag.Missiondetail.UserPrevRating) + 1; i <= 5; i++)
+                    {
+                    <i class="bi bi-star-fill star star-@i" id="@i" onclick="ratemission(this.id,@ViewBag.Missiondetail.MissionId, @ViewBag.user.UserId)"></i>
+                    }
+                    }
+                    else
+                    {
+                    <i class="bi bi-star-fill star star-1" id="1" onclick="ratemission(this.id,@ViewBag.Missiondetail.MissionId, @ViewBag.user.UserId)"></i>
+                    <i class="bi bi-star-fill star star-2" id="2" onclick="ratemission(this.id,@ViewBag.Missiondetail.MissionId, @ViewBag.user.UserId)"></i>
+                    <i class="bi bi-star-fill star star-3" id="3" onclick="ratemission(this.id,@ViewBag.Missiondetail.MissionId, @ViewBag.user.UserId)"></i>
+                    <i class="bi bi-star-fill star star-4" id="4" onclick="ratemission(this.id,@ViewBag.Missiondetail.MissionId, @ViewBag.user.UserId)"></i>
+                    <i class="bi bi-star-fill star star-5" id="5" onclick="ratemission(this.id,@ViewBag.Missiondetail.MissionId, @ViewBag.user.UserId)"></i>
+                    }
+                    </div>
+                    </button>
+                    <hr>
+                    </div>*@
+
+                <div class="rule d-flex mt-4" id="starsr">
+                    <hr style="border:1px solid black">
+
+                    @{
+                        var userid = Context.Session.GetString("userID");
+                        var useridforrating = int.Parse(userid);
+                    }
+
+                    @if (@ViewBag.Missiondetail.Rating != null)
+                    {
+
+                        int count = 0;
+
+                        @for (var i = 1; i <= @ViewBag.Missiondetail.Rating; i++)
+                        {
+                            <i class="bi bi-star-fill" style="color:orange" id="@i" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                            count++;
+                        }
+                        @for (var k = count + 1; k <= 5; k++)
+                        {
+                            <i class="bi bi-star-fill" id="@k" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                        }
+
+                    }
+                    else
+                    {
+                        <i class="bi bi-star-fill" id="1" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                        <i class="bi bi-star-fill" id="2" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                        <i class="bi bi-star-fill" id="3" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                        <i class="bi bi-star-fill" id="4" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                        <i class="bi bi-star-fill" id="5" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                    }
+
+                    <hr style="border:1px solid black">
+                </div>
+
+
+
+                <div class="row gap-2 mt-3">
+                    <div class="column border col">
+                        <i class="bi bi-geo-alt"></i>
+                        <div class="mt-2 text-secondary">city</div>
+                        <div>@ViewBag.Missiondetail.Cityname</div>
+                    </div>
+                    <div class="column border col ">
+                        <i class="bi bi-globe"></i>
+                        <div class="mt-2 text-secondary">Theme</div>
+                        <div>@ViewBag.Missiondetail.Themename</div>
+                    </div>
+                    <div class="column border col ">
+                        <i class="bi bi-geo-alt"> </i>
+                        <div class="mt-2 text-secondary mt-auto">Date</div>
+                        <div class="mt-auto mb-1">Ongoing Opportunity</div>
+                    </div>
+                    <div class="column border col ">
+                        <i class="bi bi-people alt"></i>
+                        <div class="mt-2 text-secondary mb-auto">Organization</div>
+                        <div class="mt-auto mb-1">@ViewBag.Missiondetail.OrganizationName</div>
+                    </div>
+
+                </div>
+
+                <div class="text-center mt-3">
+                    <a asp-controller="Home" asp-action="Storylisting" class="btn cardbtn mx-auto ">
+                        <span>Apply Now</span> <img class="ms-1"
+                                                    src="/Images/right-arrow.png">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-12 col-xl-7 col-lg-7 col-md-12 col-sm-12">
+
+                <div class="wrapper  tabb">
+
+                    <div class="tabs">
+                        <div class="tab " data-tab-content="tab1-content">Missions</div>
+                        <div class="tab" data-tab-content="tab2-content">Organization</div>
+                        <div class="tab active" data-tab-content="tab3-content">Comments</div>
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="tab-content-item " id="tab1-content">
+                            <h2>Introduction</h2>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae nesciunt, ducimus
+                                sapiente dolores eligendi, iusto impedit amet ipsa, incidunt eaque nostrum a aliquid
+                                ere distinctio! Laboriosam soluta magni asperiores molestiae enim perspiciatis
+                                temporibus.
+                                Accusamus similique
+                            <p>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae nesciunt, ducimus
+                                sapiente dolores eligendi, iusto impedit amet ipsa, incidunt eaque nostrum a aliquid
+                                assumenda libero!nda libero! Lorem ipsum dolor sit amet consectetur adipisicr
+                                adipisicing elit. Vitae nesciunt, ducimus
+                                sapiente dolores eligendi, iusto impedit amet
+                            <p>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae nesciunt, ducimus
+                                sapiente dolores eligendi, iusto impedit amet ipsa, incidunt eaque nostrum a aliquid
+                                assumenda libero!
+                            <p>
+
+                                <h2>Challenge</h2>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae nesciunt, ducimus
+                                sapiente dolores eligendi, iusto impedit amet ipsa, incidunt eaque nostrum a aliquid
+                                ere distinctio! Laboriosam soluta magni asperiores molestiae enim perspiciatis
+                                temporibus.
+                                Accusamus similique
+                            <p>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae nesciunt, ducimus
+                                sapiente dolores eligendi, iusto impedit amet ipsa, incidunt eaque nostrum a aliquid
+                                assumenda libero!nda libero! Lorem ipsum dolor sit amet consectetur adipisicr
+                                adipisicing elit. Vitae nesciunt, ducimus
+                                sapiente dolores eligendi, iusto impedit amet
+                            <p>
+
+                                <h2>Documents</h2>
+                                <div class="row mb-2">
+                                    <div class="mt-1 column">
+                                        <a href="#" class="btn pdf  ">
+                                            <img class="me-1"
+                                                 src="/Images/pdf.png"><span>Application</span>
+                                        </a>
+                                    </div>
+
+                                    <div class="mt-1 column">
+                                        <a href="#" class="btn pdf  ">
+                                            <img class="me-1"
+                                                 src="/Images/pdf.png"><span>Application</span>
+                                        </a>
+                                    </div>
+
+                                    <div class="mt-1 column">
+                                        <a href="#" class="btn pdf  ">
+                                            <img class="me-1"
+                                                 src="/Images/pdf.png"><span>Application</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                        </div>
+                        <div class="tab-content-item" id="tab2-content">
+                            <h2>Organization</h2>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae nesciunt, ducimus
+                                sapiente dolores eligendi, iusto impedit amet ipsa, incidunt eaque nostrum a aliquid
+                                assumenda libero! dolores eligendi, iusto impedit amet ipsa, incidunt eaque nostrum a aliquid
+                                assumenda libero!
+                            <p>
+
+
+                        </div>
+
+                        @*............................comments................................*@
+                        <div class="tab-content-item active commentdiv" id="tab3-content">
+                            <h5>Comments</h5>
+                            <div class="input-group mt-3 mb-3">
+                                <textarea class="form-control" aria-label="With textarea" id="commentarea"
+                                          placeholder="Enter your comments..."></textarea>
+                            </div>
+                            <button class="btnApply rounded-pill" onclick="PostComment()">Post Comment</button>
+
+                            <div class="panel mt-3" id="result_panel">
+                                <div class="panel-body">
+                                    <ul class="list-group">
+
+                                        @foreach (var i in @Model[0].Comments)
+                                        {
+                                            <div class="comment d-flex">
+                                                <div class="">
+                                                    <img src="~/images/volunteer7.png" class="rounded-circle" height="52"
+                                                     width="52" alt="">
+                                                </div>
+                                                <div class="ms-3">
+                                                    <p class="mt-2">@i.User.FirstName @i.User.LastName</p>
+                                                    <p>
+                                                        @i.Comment1
+                                                    </p>
+                                                    <p>@i.CreatedAt.ToString("dddd, dd MMMM yyyy , hh:mm tt")</p>
+
+                                                </div>
+                                            </div>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Code Ends -->
+
+            </div>
+
+
+            <div class="col-12 col-lg-5 col-xl-5 col-md-12 col-sm-12">
+                <div class="border">
+                    <table class="table p-3">
+                        <thead>
+                            <tr>
+                                <th scope="col">Information</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Skills</td>
+                                <td>Cool, Easy going, Math, Computer</td>
+                            </tr>
+                            <tr>
+                                <td>Days</td>
+                                <td>Weekend only</td>
+                            </tr>
+                            <tr>
+                                <td>Rating</td>
+                                <td>
+                                    <div class="vol-sec-2-right-1st-sub" id="avgrating">
+                                        <span>Ratings</span> <span class="vol-sec-2-right-1st-sub-sec ms-4">
+                                            @if (ViewBag.finalrating != null)
+                                            {
+                                                @for (int i = 0; i < ViewBag.finalrating; i++)
+                                                {
+                                                    <img src="~/images/selected-star.png">
+
+                                                }
+                                                @for (int? i = ViewBag.finalrating; i < 5; i++)
+                                                {
+                                                    <img src="~/images/star.png">
+
+                                                }
+                                            }
+
+                                        </span>
+                                        <span class="mt-2">(By @ViewBag.totalvol Volunteers)</span>
+                                    </div>
+
+
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div class="shadow-sm mt-5 ">
+                    <h4>Recent Volunteers</h4>
+                    <div id="carouselExample" class="carousel slide" data-bs-interval="false" data-ride="carousel"
+                         data-pause="hover">
+
+                        <div class="carousel-inner carContent" style="height:310px">
+
+
+                            <div class="carousel-item active mt-5">
+                                @*                                <div class="row">
+                                    @foreach (var item in ViewBag.recentvolunteered)
+                                    {
+                                    <div class="col-4 d-flex">
+                                    <a class=" ms-4 me-2 text-decoration-none text-black justify-content-center " asp-controller="home" asp-action="login">
+                                    <img src="~/img/volunteer1.png" class="involveduserprofile rounded-circle" height="62" width="62" />
+                                    <label id="" class="text-center">@item.username</label>
+                                    </a>
+                                    </div>
+                                    }
+                                    </div>*@
+
+                                <div class="row volunteerCount">
+                                    <p class="text-secondary text-center">1-9 of 25 recent volunteers</p>
+                                </div>
+
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col column2">
+                                        <img src="/images/volunteer7.png" class="rounded-circle"
+                                             style="height:60px;width:60px" />Travis Steen
+                                    </div>
+                                    <div class="col column2">
+                                        <img src="/images/volunteer8.png" class="rounded-circle"
+                                             style="height:60px;width:60px" />Sarah Santillan
+                                    </div>
+                                    <div class="col column2">
+                                        <img src="/images/volunteer9.png" class="rounded-circle"
+                                             style="height:60px;width:60px" />Linda Richards
+                                    </div>
+                                </div>
+                                <!-- <div class="row volunteerCount"> -->
+                                @*  <div class="text-secondary text-center">1-9 of 25 recent volunteers</div>*@
+                            </div>
+
+                        </div>
+
+                        <div class="row border-top">
+
+                            <div class="col-2 border-end">
+                                <img src="/images/left.png" class="ms-2 mt-4"
+                                     alt="">
+                            </div>
+                            <div class="col-8">
+                                <p class="ms-2 mt-3 text-center">1-9 of 25 Recent Volunteers</p>
+                            </div>
+                            <div class="col-2 border-start">
+                                <img src="~/images/right-arrow1.png"
+                                     class="ms-2 mt-4" alt="">
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                                data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">
+                                <img src="~/images/left.png" class="ms-2 mt-4"
+                                     alt="">
+                            </span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                                data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">
+                                <img src="~/images/right-arrow1.png"
+                                     class="ms-2 mt-4" alt="">
+                            </span>
+                        </button>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+        <hr />
+
+        @*--------------------Related Missions-------------------------*@
+        <div class="text-center ">
+            <h2>Related Missions</h2>
+        </div>
+
+        <div class="row">
+            @foreach (var category in ViewBag.relatedmission)
+            {
+                <div class="col-12 col-md-6 col-lg-4">
+
+                    <div class="card">
+
+
+                        <div class="card-img ">
+                            <img class="card-img-top h-100 " src="~/Images/Grow-Trees-On-the-path-to-environment-sustainability.png" alt="Card image cap" />
+
+                            <div class="pin d-flex align-items-center px-2 py-1 ">
+                                <img src="~/Images/pin.png" alt="location">
+                                <p class="text-white mb-0 px-2">@category.Cityname</p>
+                            </div>
+
+                            <div class="heart align-items-center px-2 py-1">
+                                <img src="~/Images/heart.png" alt="">
+                            </div>
+
+                            <div class="share align-items-center px-2 py-1">
+                                <img src="~/Images/user.png" alt="">
+                            </div>
+
+                            <div class="env align-items-center px-2 py-1 ">
+                                <p class="mb-0 info-txt-2">@category.Themename</p>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title" style="overflow: hidden; display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;">
+                                @category.Title
+                            </h5>
+                            <p class="card-text text-secondary" style="overflow: hidden; display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;">
+                                @category.ShortDescription
+                            </p>
+
+                            <div class="d-flex">
+                                <div class="card-text">@category.OrganizationName</div>
+                                <div class="ms-auto">
+                                    <img src="/images/star.png" class="star">
+                                    <img src="/Images/star-empty.png" class="star" alt="">
+                                    <img src="/Images/star-empty.png" class="star" alt="">
+                                    <img src="/Images/star-empty.png" class="star" alt="">
+                                    <img src="/Images/star-empty.png" class="star" alt="">
+                                </div>
+                            </div>
+
+                            @if (category.MissionType == "Time")
+                            {
+                                <div class="rule mt-1">
+                                    <hr>
+                                    <button class="hrbtn">From @category.StartDate until @category.EndDate</button>
+                                    <hr>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="rule">
+                                    <hr>
+                                    <button class="hrbtn">@category.GoalObjectiveText</button>
+                                    <hr>
+                                </div>
+                            }
+
+
+                            <div class="d-flex flex-row justify-content-between">
+                                <div class="d-flex flex-row align-items-center">
+                                    <img src="~/images/Seats-left.png" alt="" class="" height="30px" width="30px">
+                                    <div class="d-flex flex-column ms-2">
+                                        <p class="d-inline mb-0 pt-2">@category.Availability</p>
+                                        <p class="seat">Seats Left</p>
+                                    </div>
+                                </div>
+
+
+
+                                @if (category.MissionType == "Time")
+                                {
+                                    <div class="ms-auto"><img src="/images/deadline.png" class="mt-2"></div>
+                                    <div class="ms-2">
+                                        @category.EndDate <p>Deadline</p>
+                                    </div>
+                                }
+                                else
+                                {
+
+                                    <div class="ms-auto me-2"><img src="/images/achieved.png" class="mt-2"></div>
+                                    <div class="ms-2 me-5" stye="width:100%">
+                                        <div class="progress mt-2" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress-bar bg-warning" style="width: 25%">25%</div>
+                                        </div>
+                                        <fs-5>Deadline</fs-5>
+                                    </div>
+                                }
+
+
+                            </div>
+
+                            <div class="text-center">
+                                <a href="/Home/volunteering?missionid=@category.MissionId" class="btn cardbtn mx-auto ">
+                                    <span>Story listing</span> <img class="ms-1"
+                                                                src="/Images/right-arrow.png">
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            }
+
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+                crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
+        <script src="/js/volunteering.js" asp-append-version="true"></script>
+</body>
+</html>

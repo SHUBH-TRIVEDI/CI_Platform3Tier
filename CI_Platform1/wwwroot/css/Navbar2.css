@@ -1,0 +1,17 @@
+﻿.filter-list {
+    / padding:6px 10px;
+    / background-color: white;
+    border: 1px solid #808080;
+    border-radius: 20px;
+    color: #000;
+    cursor: pointer;
+}
+
+.filter-close-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 5px;
+    -ms-perspective-origin-y888;
+}
