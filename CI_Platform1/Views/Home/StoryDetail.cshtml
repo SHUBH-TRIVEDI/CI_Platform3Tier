@@ -1,4 +1,11 @@
-﻿<partial name="Navbar1" />
+﻿@using CI_Entities1.Models.NewFolder
+@model Storylist
+
+@*@{
+var user= Model.User8.FirstOrDefault(u=> u.UserId== Model.Stories.user)
+}
+*@
+<partial name="Navbar1" />
 
 <!DOCTYPE html>
 <html lang="en">
@@ -86,7 +93,7 @@
                     <div class="mt-5 "><img src="/Images/volunteer2.png" class="rounded-circle" alt=""></div>
 
                     <div class="d-flex justify-content-between">
-                        <div>Charles vigue</div>
+                        <div>@Model.User8.</div>
                         <div class="btn border eye"><i class="bi bi-eye"></i> 12000 Views</div>
                     </div>
                 </div>

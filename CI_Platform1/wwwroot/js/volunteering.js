@@ -67,6 +67,22 @@ function addToFav(missonid) {
     });
 }
 
+function Apply(missonid) {
+    $.ajax({
+        type: 'GET',
+        url: "/Home/Applied",
+        data: { 'missonid': missonid },
+        success: function (res) {
+            $('.apply').html($(res).find('.apply').html());
+            console.log("Mission Applied");
+        },
+        error: function () {
+            alert("please login first.");
+        }
+
+    });
+}
+
 //Rating
 function addRating(starId, missionId, Id) {
 

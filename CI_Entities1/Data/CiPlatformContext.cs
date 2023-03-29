@@ -48,7 +48,7 @@ public partial class CiPlatformContext : DbContext
 
     public virtual DbSet<MissionTheme> MissionThemes { get; set; }
 
-    public virtual DbSet<PasswordReset> PasswordResets { get; set; }
+    public virtual DbSet<PasswordReset> Resetpassword { get; set; }
 
     public virtual DbSet<Skill> Skills { get; set; }
 

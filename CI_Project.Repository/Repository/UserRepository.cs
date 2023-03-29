@@ -1,5 +1,6 @@
 ﻿using CI_Entities1.Data;
 using CI_Entities1.Models;
+using CI_Platform1.Models;
 using CI_Project.Repository.Interface;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -19,6 +20,20 @@ namespace CI_Project.Repository.Repository
             _CiPlatformContext= CiPlatformContext;
         }
 
+        public MissionApplication ApplyMission(int missonid, int userid)
+        {
+            MissionApplication ma = new MissionApplication();
+            ma.MissionId = missonid;
+            ma.UserId= userid;
+            ma.ApprovalStatus = "1";
+            ma.CreatedAt = DateTime.Now;
+            ma.AppliedAt = DateTime.Now;
+
+            _CiPlatformContext.Add(ma);
+            _CiPlatformContext.SaveChanges();
+            return ma;
+        }
+
 
         public User UserByEmail(String email)
         {
@@ -32,7 +47,7 @@ namespace CI_Project.Repository.Repository
 
         public PasswordReset Reset(String email, String token)
         {
-            return _CiPlatformContext.PasswordResets.FirstOrDefault(u => u.Email == email && u.Token == token);
+            return _CiPlatformContext.Resetpassword.FirstOrDefault(u => u.Email == email && u.Token == token);
 
         }
         public User addUser(User user)
@@ -42,17 +57,31 @@ namespace CI_Project.Repository.Repository
             return user;
         }
 
-        public PasswordReset token( string email ,string token)
+        public PasswordReset token(string email, string token)
         {
             PasswordReset pr = new PasswordReset
+            //ResetPassword pr = new ResetPassword
             {
                 Email = email,
                 Token = token
             };
-            _CiPlatformContext.PasswordResets.Add(pr);
+            _CiPlatformContext.Resetpassword.Add(pr);
             _CiPlatformContext.SaveChanges();
             return pr;
         }
+
+        //public Resetpassword token(string email, string token)
+        //{
+        //    Resetpassword pr = new Resetpassword
+        //    {
+        //        Email = email,
+        //        Token = token
+        //    };
+        //    _CiPlatformContext.Resetpassword.Add(pr);
+        //    _CiPlatformContext.SaveChanges();
+        //    return pr;
+
+        //}
 
         //Favroite mission
         public FavoriteMission FavMission(int missionId, int userId)

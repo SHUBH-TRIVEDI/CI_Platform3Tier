@@ -1,4 +1,6 @@
 ﻿@using CI_Entities1.Models
+@*@using CI_Platform1.Models
+@model VolunteeringVM *@
 
 <partial name="Navbar1" />
 
@@ -111,15 +113,8 @@
                 </div>
 
                 <hr>
-                @*//Reccomend to Coworker*@
+                @*//Reccomend to Coworker &&  Favrouite*@
                 <div class="row addFav">
-                    @*  <button class="btn col ton me-3" type="button" onclick="Fav()">
-                        <i class="bi bi-heart"></i>
-                        <span>Add to Favourite</span>
-                        </button>
-                        col  col-11  col-xl-5 col-lg-11 col-md-5 col   me-xl-4  me-md-4 rounded-5 d-flex   Addfavourite   justify-content-center
-                    *@
-
                     @if (ViewBag.fav == null)
                     {
                         <button class="btn col ton me-3 Addfavourite" onclick="addToFav(@ViewBag.Missiondetail.MissionId)">
@@ -172,68 +167,39 @@
                 </div>
 
                 @*RAting*@
-                @*                <div class="rule mt-3">
-                    <hr>
-                    <button class="hrbtn">
-
-                    <div class="text-center">
-                    @if (ViewBag.Missiondetail.UserPrevRating != null)
-                    {
-                    @for (var i = 1; i <= int.Parse(ViewBag.Missiondetail.UserPrevRating); i++)
-                    {
-                    <i class="bi bi-star-fill star star-@i" style="color:#F88634;" id="@i" onclick="ratemission(this.id,@ViewBag.Missiondetail.MissionId, @ViewBag.user.UserId)"></i>
-                    }
-                    @for (var i = int.Parse(ViewBag.Missiondetail.UserPrevRating) + 1; i <= 5; i++)
-                    {
-                    <i class="bi bi-star-fill star star-@i" id="@i" onclick="ratemission(this.id,@ViewBag.Missiondetail.MissionId, @ViewBag.user.UserId)"></i>
-                    }
-                    }
-                    else
-                    {
-                    <i class="bi bi-star-fill star star-1" id="1" onclick="ratemission(this.id,@ViewBag.Missiondetail.MissionId, @ViewBag.user.UserId)"></i>
-                    <i class="bi bi-star-fill star star-2" id="2" onclick="ratemission(this.id,@ViewBag.Missiondetail.MissionId, @ViewBag.user.UserId)"></i>
-                    <i class="bi bi-star-fill star star-3" id="3" onclick="ratemission(this.id,@ViewBag.Missiondetail.MissionId, @ViewBag.user.UserId)"></i>
-                    <i class="bi bi-star-fill star star-4" id="4" onclick="ratemission(this.id,@ViewBag.Missiondetail.MissionId, @ViewBag.user.UserId)"></i>
-                    <i class="bi bi-star-fill star star-5" id="5" onclick="ratemission(this.id,@ViewBag.Missiondetail.MissionId, @ViewBag.user.UserId)"></i>
-                    }
-                    </div>
-                    </button>
-                    <hr>
-                    </div>*@
-
                 <div class="rule d-flex mt-4" id="starsr">
                     <hr style="border:1px solid black">
-
                     @{
                         var userid = Context.Session.GetString("userID");
                         var useridforrating = int.Parse(userid);
                     }
+                    <button class="hrbtn border-0">
 
-                    @if (@ViewBag.Missiondetail.Rating != null)
-                    {
-
-                        int count = 0;
-
-                        @for (var i = 1; i <= @ViewBag.Missiondetail.Rating; i++)
+                        @if (@ViewBag.Missiondetail.Rating != null)
                         {
-                            <i class="bi bi-star-fill" style="color:orange" id="@i" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
-                            count++;
+
+                            int count = 0;
+
+                            @for (var i = 1; i <= @ViewBag.Missiondetail.Rating; i++)
+                            {
+                                <i class="bi bi-star-fill" style="color:orange" id="@i" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                                count++;
+                            }
+                            @for (var k = count + 1; k <= 5; k++)
+                            {
+                                <i class="bi bi-star-fill" id="@k" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                            }
+
                         }
-                        @for (var k = count + 1; k <= 5; k++)
+                        else
                         {
-                            <i class="bi bi-star-fill" id="@k" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                            <i class="bi bi-star-fill" id="1" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                            <i class="bi bi-star-fill" id="2" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                            <i class="bi bi-star-fill" id="3" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                            <i class="bi bi-star-fill" id="4" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                            <i class="bi bi-star-fill" id="5" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
                         }
-
-                    }
-                    else
-                    {
-                        <i class="bi bi-star-fill" id="1" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
-                        <i class="bi bi-star-fill" id="2" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
-                        <i class="bi bi-star-fill" id="3" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
-                        <i class="bi bi-star-fill" id="4" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
-                        <i class="bi bi-star-fill" id="5" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
-                    }
-
+                    </button>
                     <hr style="border:1px solid black">
                 </div>
 
@@ -262,13 +228,25 @@
                     </div>
 
                 </div>
+@*                @{
+                    var applied= @Model.missionApplications.FirstOrDefault(u=> u.UserId== Convert.ToInt32(userid) && u.MissionId==@ViewBag.Missiondetail.MissionId);
+                }*@
 
-                <div class="text-center mt-3">
-                    <a asp-controller="Home" asp-action="Storylisting" class="btn cardbtn mx-auto ">
-                        <span>Apply Now</span> <img class="ms-1"
-                                                    src="/Images/right-arrow.png">
-                    </a>
+                @if(ViewBag.isapplied==0)
+                {
+                     <div class="text-center mt-3 apply ">
+                        <button class="btn cardbtn mx-auto " onclick="Apply(@ViewBag.Missiondetail.MissionId)">Apply Now  <img class="ms-1"
+                                                    src="/Images/right-arrow.png"> </button>
+                    </div>
+                }
+                else
+                {
+                     <div class="text-center mt-3 apply ">
+                        <button class="btn cardbtn mx-auto " onclick="Apply(@ViewBag.Missiondetail.MissionId)" dia>Apply Done  <img class="ms-1"
+                                                    src="/Images/right-arrow.png"> </button>
                 </div>
+                }
+
 
             </div>
         </div>
@@ -373,26 +351,26 @@
 
                             <div class="panel mt-3" id="result_panel">
                                 <div class="panel-body">
-                                    <ul class="list-group">
+                                      @*//<ul class="list-group">
 
-                                        @foreach (var i in @Model[0].Comments)
-                                        {
-                                            <div class="comment d-flex">
-                                                <div class="">
-                                                    <img src="~/images/volunteer7.png" class="rounded-circle" height="52"
-                                                     width="52" alt="">
-                                                </div>
-                                                <div class="ms-3">
-                                                    <p class="mt-2">@i.User.FirstName @i.User.LastName</p>
-                                                    <p>
-                                                        @i.Comment1
-                                                    </p>
-                                                    <p>@i.CreatedAt.ToString("dddd, dd MMMM yyyy , hh:mm tt")</p>
+                                    //  @foreach (var i in @Model[0].Comments
+                                    //    {
+                                    //        <div class="comment d-flex">
+                                    //            <div class="">
+                                    //                <img src="~/images/volunteer7.png" class="rounded-circle" height="52"
+                                    //                 width="52" alt="">
+                                    //            </div>
+                                    //            <div class="ms-3">
+                                    //                <p class="mt-2">@i.User.FirstName @i.User.LastName</p>
+                                    //                <p>
+                                    //                    @i.Comment1
+                                    //                </p>
+                                    //                <p>@i.CreatedAt.ToString("dddd, dd MMMM yyyy , hh:mm tt")</p>
 
-                                                </div>
-                                            </div>
-                                        }
-                                    </ul>
+                                    //            </div>
+                                    //        </div>
+                                    //    }
+                                    //</ul>*@
                                 </div>
                             </div>
 
@@ -445,9 +423,6 @@
                                         </span>
                                         <span class="mt-2">(By @ViewBag.totalvol Volunteers)</span>
                                     </div>
-
-
-
                                 </td>
                             </tr>
                         </tbody>
@@ -475,14 +450,6 @@
                                     </div>
                                     }
                                     </div>*@
-
-                                <div class="row volunteerCount">
-                                    <p class="text-secondary text-center">1-9 of 25 recent volunteers</p>
-                                </div>
-
-                            </div>
-
-                            <div class="carousel-item">
                                 <div class="row">
                                     <div class="col column2">
                                         <img src="/images/volunteer7.png" class="rounded-circle"
@@ -497,8 +464,31 @@
                                              style="height:60px;width:60px" />Linda Richards
                                     </div>
                                 </div>
+
+                                <div class="row volunteerCount">
+                                    <p class="text-secondary text-center">1-9 of 25 recent volunteers</p>
+                                </div>
+
+                            </div>
+
+                            <div class="carousel-item">
+@*                                <div class="row">
+                                    <div class="col column2">
+                                        <img src="/images/volunteer7.png" class="rounded-circle"
+                                             style="height:60px;width:60px" />Travis Steen
+                                    </div>
+                                    <div class="col column2">
+                                        <img src="/images/volunteer8.png" class="rounded-circle"
+                                             style="height:60px;width:60px" />Sarah Santillan
+                                    </div>
+                                    <div class="col column2">
+                                        <img src="/images/volunteer9.png" class="rounded-circle"
+                                             style="height:60px;width:60px" />Linda Richards
+                                    </div>
+                                </div>*@
                                 <!-- <div class="row volunteerCount"> -->
                                 @*  <div class="text-secondary text-center">1-9 of 25 recent volunteers</div>*@
+
                             </div>
 
                         </div>

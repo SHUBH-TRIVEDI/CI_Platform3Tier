@@ -1,9 +1,11 @@
 ﻿using CI_Entities1.Models;
+using CI_Platform1.Models;
 
 namespace CI_Project.Repository.Interface
 {
     public interface IUser
     {
+        public MissionApplication  ApplyMission(int missonid,int userid);
         public User UserByEmail(string email);
 
         public User UserByEmailPassword(String email, string password);
@@ -23,6 +25,8 @@ namespace CI_Project.Repository.Interface
         public MissionRating updaterating(MissionRating ratingExists, int rating);
 
         public MissionRating addratings(int rating, long id, long missionid);
+
+       // public Resetpassword token(string email, string token);
 
 
     }

@@ -8,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<CiPlatformContext>();
 builder.Services.AddScoped<IUser, UserRepository>();
+builder.Services.AddScoped<ILanding, LandingRepository>();
+
 builder.Services.AddSession();
 var app = builder.Build();
 

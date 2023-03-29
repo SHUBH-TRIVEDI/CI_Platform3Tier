@@ -4,76 +4,79 @@
 
 <partial name="Navbar2" />
 
-@*<partial name="Missions" />*@
-
 <div id="missiondetails"></div>
 
 @*<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.min.js"></script>*@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
+
 <script>
-                    function mysearch(order=1, jpg){
 
-                        var search = $("#search-addon[name=searchText]").val();
+    function mysearch(order=1, jpg){
+        var search = $("#search-addon[name=searchText]").val();
 
-                        var country = [];
-                        $("input[type='checkbox'][name='country']:checked").each(function () {
-                            country.push($(this).val());
-                        });
+        var country = [];
+        $("input[type='checkbox'][name='country']:checked").each(function () {
+            country.push($(this).val());
+        });
 
-                        var city = [];
-                        $("input[type='checkbox'][name='city']:checked").each(function () {
-                            city.push($(this).val());
-                        });
+        var city = [];
+        $("input[type='checkbox'][name='city']:checked").each(function () {
+            city.push($(this).val());
+        });
 
-                        var theme = [];
-                        $("input[type='checkbox'][name='theme']:checked").each(function () {
-                            theme.push($(this).val());
-                        });
-
-
-                        $.ajax({
-                            url: '/Home/_Missions',
-                            type: 'GET',
-                            data: { 'SearchingMission': search,'order':order ,'jpg':jpg,'country': country.toString(), 'city': city.toString(), 'theme': theme.toString() },
-                            success: function (res) {
-                                $("#missiondetails").html(res);
-                            },
-                            error: function (res) {
-                                alert("error");
-                            }
-                        });
-                    }
-                    $(document).ready(function() {
-
-                        mysearch();
-                    });
+        var theme = [];
+        $("input[type='checkbox'][name='theme']:checked").each(function () {
+            theme.push($(this).val());
+        });
 
 
-                    //AVG Rating
-                    function addRating(starId, missionId, Id) {
-                    $.ajax({
-                        url: '/Home/Addrating',
-                        type: 'POST',
-                        data: { missionId: missionId, Id: Id, rating: starId },
-                        success: function (response) {
+        $.ajax({
+            url: '/Home/_Missions',
+            type: 'GET',
+            data: { 'SearchingMission': search,'order':order ,'jpg':jpg,'country': country.toString(), 'city': city.toString(), 'theme': theme.toString() },
+            success: function (res) {
+                $("#missiondetails").html(res);
+            },
 
-                            $('#starsr').html($(response).find('#starsr').html());
-                            $('#avgrating').html($(response).find('#avgrating').html());
+            error: function (res) {
+                alert("error");
+            }
+        });
+    }
 
-                        },
-                        error: function () {
-                            alert("could not add rating");
-                        }
-                    });
-                    }
+    $(document).ready(function() {
+        mysearch();
+    });
+
+
+    // Rating
+
+    function addRating(starId, missionId, Id) {
+
+
+        $.ajax({
+            url: '/Home/Addrating',
+            type: 'POST',
+            data: { missionId: missionId, Id: Id, rating: starId },
+
+            success: function (response) {
+                $('#starsr').html($(response).find('#starsr').html());
+                $('#avgrating').html($(response).find('#avgrating').html());
+            },
+
+            error: function () {
+                alert("could not add rating");
+            }
+        });
+    }
 
     //--------------------------Add to Favroite Mission--------------------------------------------
 
 
     function addToFav(missonid) {
         $.ajax({
-            
+
             type: 'GET',
             url: "/Home/addToFavouriteLanding",
             data: { 'missonid': missonid },
@@ -89,187 +92,95 @@
         });
     }
 
-
-                //Script
-
-                function showList(e) {
-
-                var $gridCont = $('.grid-container');
-                e.preventDefault();
-                $gridCont.hasClass('list-view') ? $gridCont.removeClass('list-view') : $gridCont.addClass('list-view');
-                }
-                function gridList(e) {
-
-                var $gridCont = $('.grid-container')
-                e.preventDefault();
-                $gridCont.removeClass('list-view');
-                }
-
-                $(document).on('click', '.btn-grid', gridList);
-                $(document).on('click', '.btn-list', showList);
-
-                var cbs = document.querySelectorAll('input[type=checkbox]');
-                for (var i = 0; i < cbs.length; i++) {
-                cbs[i].addEventListener('change', function () {
-                if (this.checked) {
-                addElement(this, this.value);
-                }
-                else {
-
-                removeElement(this.value);
-                console.log("unchecked");
-                }
+    //Reccomend to coworker
+    function sendmail(id) {
+        const mail = Array.from(document.querySelectorAll('input[name="mail"]:checked')).map(el => el.id);
+        var send = document.getElementById("sendmail");
+        send.innerHTML = "Sending"
+                        
+        $.ajax({
+            url: '/Home/Sendmail',
+            type: 'POST',
+            data: { userid: mail, id: id },
+            success: function (result) {
+                alert("Recomendations sent successfully!");
+                const checkboxes = document.querySelectorAll('input[name="mail"]:checked');
+                checkboxes.forEach((checkbox) => {
+                    checkbox.checked = false;
                 });
-                }
-
-                function addElement(current, value) {
-                let filtersSection = document.querySelector(".filters-section");
-
-                let createdTag = document.createElement('span');
-                createdTag.classList.add('filter-list');
-                createdTag.classList.add('ps-3');
-                createdTag.classList.add('pe-1');
-                createdTag.classList.add('me-2');
-                createdTag.innerHTML = value;
-
-                createdTag.setAttribute('id', value);
-                let crossButton = document.createElement('button');
-                crossButton.classList.add("filter-close-button");
-                let cross = '&times;'
+                send.innerHTML = "sent"
+            },
+            error: function () {
+                alert('Error: Could not recommend mission.');
+            }
+        });
+    }
 
 
-                crossButton.addEventListener('click', function () {
-                let elementToBeRemoved = document.getElementById(value);
-
-                console.log(elementToBeRemoved);
-                console.log(current);
-                elementToBeRemoved.remove();
-
-                current.checked = false;
+    //Script
 
 
+    function showList(e) {
+        var $gridCont = $('.grid-container');
+        e.preventDefault();
+        $gridCont.hasClass('list-view') ? $gridCont.removeClass('list-view') : $gridCont.addClass('list-view');
+    }
 
+    function gridList(e) {
+        var $gridCont = $('.grid-container')
+        e.preventDefault();
+        $gridCont.removeClass('list-view');
+    }
 
-                })
-
-                crossButton.innerHTML = cross;
-
-
-                // let crossButton = '&times;'
-
-                createdTag.appendChild(crossButton);
-                filtersSection.appendChild(createdTag);
-
-                }
-                function ClearAllElement() {
-
-                var filtersSection = document.querySelector(".filters-section");
-
-                for (var i = 0; i < filtersSection.length; i++) {
-                filtersSection.pop();
-                }
-
-                }
-
-
-                function removeElement(value) {
-
-                let filtersSection = document.querySelector(".filters-section");
-
-                let elementToBeRemoved = document.getElementById(value);
-                filtersSection.removeChild(elementToBeRemoved);
-
-                }
-
-                    //function showList(e) {
-                    //    var imgdiv = document.querySelectorAll('.imgdiv');
-                    //    var missionimg = document.querySelectorAll('.missionimg');
-
-                    //    var $gridCont = $('.grid-container');
-                    //    e.preventDefault();
-                    //    //$gridCont.hasClass('list-view') ? $gridCont.removeClass('list-view') : $gridCont.addClass('list-view');
-                    //    $gridCont.removeClass('grid-view');
-                    //    $gridCont.addClass('list-view');
-                    //    for (var item of imgdiv) {
-                    //        item.style.width = "36%";
-                    //    }
-
-                    //    //for(var item1 of missionimg){
-                    //    //    item.style.width = "100%";
-                    //    //}
+    $(document).on('click', '.btn-grid', gridList);
+    $(document).on('click', '.btn-list', showList);
 
 
 
-                    //}
-                    //function gridList(e) {
-                    //    var imgdiv = document.querySelectorAll('.imgdiv');
-                    //    var missionimg = document.querySelectorAll('.missionimg');
-                    //    var $gridCont = $('.grid-container')
-                    //    e.preventDefault();
-                    //    //$gridCont.removeClass('list-view');
+                    function showList(e) {
+                        var imgdiv = document.querySelectorAll('.imgdiv');
+                        var missionimg = document.querySelectorAll('.missionimg');
 
-                    //    $gridCont.removeClass('list-view');
-                    //    $gridCont.addClass('grid-view');
-                    //    for (var item of imgdiv) {
-                    //        item.style.width = "100%";
-                    //    }
+                        var $gridCont = $('.grid-container');
+                        e.preventDefault();
+                        //$gridCont.hasClass('list-view') ? $gridCont.removeClass('list-view') : $gridCont.addClass('list-view');
+                        $gridCont.removeClass('grid-view');
+                        $gridCont.addClass('list-view');
+                        for (var item of imgdiv) {
+                            item.style.width = "36%";
+                        }
 
-                    //    for (var item of missionimg) {
-                    //        item.style.width = "100%";
-                    //    }
+                        //for(var item1 of missionimg){
+                        //    item.style.width = "100%";
+                        //}
 
-                    //}
 
-                    //$(document).on('click', '.btn-grid', gridList);
-                    //$(document).on('click', '.btn-list', showList);
-
-                    //--------------------------Add to Favroite Mission--------------------------------------------
-                    function addtofav1(missionId, Id) {
-                        $.ajax({
-                            url: '/Home/Addfav',
-                            type: 'POST',
-                            data: { missionId: missionId, Id: Id },
-                            success: function (result) {
-                                if (result.favmission == "0") {
-                                    var favbtn = document.getElementById("favmissiondiv");
-                                    var heartbtn = document.getElementById("heart");
-                                    heartbtn.style.color = "#F88634";
-                                    favbtn.style.color = "orange"
-                                }
-                                else {
-                                    var favbtn = document.getElementById("favmissiondiv");
-                                    var heartbtn = document.getElementById("heart");
-                                    heartbtn.style.color = "black";
-                                    favbtn.style.color = "black"
-                                }
-                            }
-                        });
-                    }
-
-                    //Reccomend to coworker
-                    function sendmail(id) {
-                        const mail = Array.from(document.querySelectorAll('input[name="mail"]:checked')).map(el => el.id);
-                        var send = document.getElementById("sendmail");
-                        send.innerHTML = "Sending"
-                        $.ajax({
-                            url: '/Home/Sendmail',
-                            type: 'POST',
-                            data: { userid: mail, id: id },
-                            success: function (result) {
-                                alert("Recomendations sent successfully!");
-                                const checkboxes = document.querySelectorAll('input[name="mail"]:checked');
-                                checkboxes.forEach((checkbox) => {
-                                    checkbox.checked = false;
-                                });
-                                send.innerHTML = "sent"
-                            },
-                            error: function () {
-                                // Handle error response from the server, e.g. show an error message to the user
-                                alert('Error: Could not recommend mission.');
-                            }
-                        });
 
                     }
+                    function gridList(e) {
+                        var imgdiv = document.querySelectorAll('.imgdiv');
+                        var missionimg = document.querySelectorAll('.missionimg');
+                        var $gridCont = $('.grid-container')
+                        e.preventDefault();
+                        //$gridCont.removeClass('list-view');
+
+                        $gridCont.removeClass('list-view');
+                        $gridCont.addClass('grid-view');
+                        for (var item of imgdiv) {
+                            item.style.width = "100%";
+                        }
+
+                        for (var item of missionimg) {
+                            item.style.width = "100%";
+                        }
+
+                    }
+
+                    $(document).on('click', '.btn-grid', gridList);
+                    $(document).on('click', '.btn-list', showList);
+
+
+
 
 </script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>

@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Data;
 using System.Diagnostics;
 using System.Diagnostics.Metrics;
+using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Web;
@@ -18,19 +19,19 @@ namespace CI_Platform1.Controllers
 {
     public class HomeController : Controller
     {
-        int i = 0, i1 = 0, j = 0, j1 = 0, k = 0, k1 = 0;
         private readonly ILogger<HomeController> _logger;
         private readonly CiPlatformContext _CiPlatformContext;
-
         private readonly IUser _Interface;
+        private readonly ILanding _Landing;
 
         public dynamic SearchingMission { get; private set; }
 
-        public HomeController(CiPlatformContext CiPlatformContext, IUser UserInterface)
+        public HomeController(CiPlatformContext CiPlatformContext, IUser UserInterface, ILanding landing)
         {
             _CiPlatformContext = CiPlatformContext;
             //_logger = logger     ILogger<HomeController> logger,;
             _Interface = UserInterface;
+            _Landing = landing;
         }
 
         //login method
@@ -109,20 +110,8 @@ namespace CI_Platform1.Controllers
                     return RedirectToAction("ForgetPass", "Home");
                 }
 
-
                 var token = Guid.NewGuid().ToString();
-
-                //var passwordReset = new PasswordReset
-                //{
-                //    Email = model.Email,
-                //    Token = token
-                //};
-
                 _Interface.token(model.Email, token);
-
-                //_CiPlatformContext.PasswordResets.Add(passwordReset);
-                //_CiPlatformContext.SaveChanges();
-
 
                 var resetLink = Url.Action("Resetpass", "Home", new { email = model.Email, token }, Request.Scheme);
 
@@ -147,7 +136,6 @@ namespace CI_Platform1.Controllers
 
                 return RedirectToAction("Login", "Home");
             }
-
             return View();
         }
 
@@ -202,7 +190,7 @@ namespace CI_Platform1.Controllers
 
 
         //Landing Page
-        public IActionResult LandingPage(long id, string SearchingMission, int? pageIndex, int cntry, int Order)
+        public IActionResult LandingPage()
         {
             //User Admin Name
             var userid = HttpContext.Session.GetString("userID");
@@ -216,34 +204,37 @@ namespace CI_Platform1.Controllers
             ViewBag.Missiondetail = volunteeringVM;
 
             LandingPageVM lp = new LandingPageVM();
-            lp.missions = _CiPlatformContext.Missions.ToList();
-            lp.cities = _CiPlatformContext.Cities.ToList();
-            lp.countries = _CiPlatformContext.Countries.ToList();
-            lp.missionThemes = _CiPlatformContext.MissionThemes.ToList();
-            lp.users = _CiPlatformContext.Users.ToList();
-            lp.goalMissions = _CiPlatformContext.GoalMissions.ToList();
-            lp.favoriteMissions = _CiPlatformContext.FavoriteMissions.ToList();
-            lp.missionRatings = _CiPlatformContext.MissionRatings.ToList();
-            lp.skills = _CiPlatformContext.Skills.ToList();
+
+            lp.missions = _Landing.missions();
+            lp.users = _Landing.users();
+            lp.missionRatings = _Landing.missionRatings();
+            lp.cities = _Landing.city();
+            lp.countries = _Landing.country();
+            lp.missionThemes = _Landing.missionThemes();
+            lp.goalMissions = _Landing.goalMissions();
+            lp.favoriteMissions = _Landing.favoriteMissions();
+            lp.missionApplications = _Landing.missionApplications();
 
             return View(lp);
         }
         [HttpGet]
-        public IActionResult _Missions(long id, int jpg, string SearchingMission, int? pageIndex, int cntry, int order, string country, string city, string theme, long missionId)
+        public IActionResult _Missions(int jpg, string SearchingMission, int order, string country, string city, string theme, long missionId)
         {
             var userid = HttpContext.Session.GetString("userID");
             ViewBag.UserId = int.Parse(userid);
 
             LandingPageVM lp = new LandingPageVM();
-            lp.missions = _CiPlatformContext.Missions.ToList();
-            lp.cities = _CiPlatformContext.Cities.ToList();
-            lp.countries = _CiPlatformContext.Countries.ToList();
-            lp.missionThemes = _CiPlatformContext.MissionThemes.ToList();
-            lp.users = _CiPlatformContext.Users.ToList();
-            lp.goalMissions = _CiPlatformContext.GoalMissions.ToList();
-            lp.favoriteMissions = _CiPlatformContext.FavoriteMissions.ToList();
-            lp.missionRatings = _CiPlatformContext.MissionRatings.ToList();
-            lp.missionApplications = _CiPlatformContext.MissionApplications.Where(e => e.UserId == Convert.ToInt32(userid)).ToList();
+
+            lp.missions = _Landing.missions();
+            lp.users = _Landing.users();
+            lp.missionRatings = _Landing.missionRatings();
+            lp.cities = _Landing.city();
+            lp.countries = _Landing.country();
+            lp.missionThemes = _Landing.missionThemes();
+            lp.goalMissions = _Landing.goalMissions();
+            lp.favoriteMissions = _Landing.favoriteMissions();
+            lp.missionApplications = _Landing.missionApplications();
+
 
 
             if (userid == null)
@@ -254,7 +245,9 @@ namespace CI_Platform1.Controllers
             //Search Mission
             if (SearchingMission != null)
             {
-                lp.missions = _CiPlatformContext.Missions.Where(m => m.Title.Contains(SearchingMission)).ToList();
+                //char.ToUpper(str[0]) + str.Substring(1)
+                var search = char.ToUpper(SearchingMission[0]) + SearchingMission.Substring(1);
+                lp.missions = lp.missions.Where(m => m.Title.Contains(search)).ToList();
 
                 if (lp.missions.Count() == 0)
                 {
@@ -281,6 +274,14 @@ namespace CI_Platform1.Controllers
                 lp.missions = lp.missions.Where(m => themeText.Contains(m.Theme.Title)).ToList();
             }
 
+            if (lp.missions.Count() == 0)
+            {
+                return RedirectToAction("NoMissionFound", "Home");
+            }
+
+            //Add to favrouite
+            var fav = lp.favoriteMissions.FirstOrDefault(u => u.UserId == Convert.ToInt32(userid) && u.MissionId == missionId);
+            ViewBag.fav = fav;
 
             //Order By
             switch (order)
@@ -302,9 +303,13 @@ namespace CI_Platform1.Controllers
                 case 5:
                     lp.missions = lp.missions.OrderBy(e => e.ThemeId).ToList();
                     break;
-                    //default:
-                    //    mission = _CiPlatformContext.Missions.OrderBy(e => e.Theme).ToList();
+
+                    //case 6:
+                    //    lp.missions = lp.missions.Where(m => m.fav == true).ToList();
                     //    break;
+                    //    //lp.missions = lp.missions.OrderByDescending(e => e.fav).ToList();
+                    //    //lp.missions = lp.missions.Where(m => m.fav == true).ToList();
+
             }
 
             //Pagination
@@ -323,31 +328,7 @@ namespace CI_Platform1.Controllers
             lp.missions = data.ToList();
             ViewBag.TotalMission = recsCount;
 
-            //Average Rating
-            //int finalrating = 0;
-            ////var volmission = _CiPlatformContext.Missions.FirstOrDefault(m => m.MissionId == missionId);
-            ////var ratinglist = _Interface.missionRatings().Where(m => m.MissionId == volmission.MissionId).ToList();
-            //if (ratinglist.Count() > 0)
-            //{
-            //    int rat = 0;
-            //    foreach (var m in ratinglist)
-            //    {
-            //        rat = rat + Convert.ToInt32(m.Rating);
 
-
-            //    }
-            //    finalrating = rat / ratinglist.Count();
-            //}
-            //ViewBag.finalrating = finalrating;
-            //ViewBag.totalvol = ratinglist.Count();
-            ////ViewBag.Missiondetail = volunteeringVM;
-            ///
-
-
-
-            //Add to favroite
-            var fav=lp.favoriteMissions.FirstOrDefault(u=> u.UserId== Convert.ToInt32(userid)  && u.MissionId== missionId);
-            ViewBag.fav = fav;
 
             return PartialView("_Missions", lp);
         }
@@ -356,16 +337,19 @@ namespace CI_Platform1.Controllers
         //Volunteering Missions Model
         public IActionResult volunteering(long missionid, long id, long missionId)
         {
-            List<Mission> mission = _CiPlatformContext.Missions.ToList();
-            ViewBag.listofmission = mission;
+            LandingPageVM lp = new LandingPageVM();
+            lp.missions = _Landing.missions();
+            lp.users = _Landing.users();
+            //List<Mission> mission = _CiPlatformContext.Missions.ToList();
+            ViewBag.listofmission = lp.missions;
 
             var userid = HttpContext.Session.GetString("userID");
             ViewBag.UserId = int.Parse(userid);
 
-            List<User> Alluser = _CiPlatformContext.Users.ToList();
-            ViewBag.alluser = Alluser;
+            //List<User> Alluser = _CiPlatformContext.Users.ToList();
+            ViewBag.alluser = lp.users;
 
-            var ratings =_Interface.missionRatings().FirstOrDefault(MR => MR.MissionId == missionId && MR.UserId == int.Parse(userid));
+            var ratings = _Interface.missionRatings().FirstOrDefault(MR => MR.MissionId == missionId && MR.UserId == int.Parse(userid));
 
             ViewBag.user = _CiPlatformContext.Users.FirstOrDefault(e => e.UserId == id);
             List<VolunteeringVM> relatedlist = new List<VolunteeringVM>();
@@ -395,9 +379,22 @@ namespace CI_Platform1.Controllers
             volunteeringVM.Themename = theme.Title;
             volunteeringVM.EndDate = Enddate[0];
             volunteeringVM.StartDate = Startdate[0];
-            volunteeringVM.favoriteMissions= _CiPlatformContext.FavoriteMissions.ToList();    
+            volunteeringVM.favoriteMissions = _CiPlatformContext.FavoriteMissions.ToList();
             volunteeringVM.Rating = ratings != null ? Convert.ToInt64(ratings.Rating) : 0;
             volunteeringVM.GoalObjectiveText = themeobjective.GoalObjectiveText;
+
+            volunteeringVM.missionApplications= _CiPlatformContext.MissionApplications.ToList();
+            var app = _CiPlatformContext.MissionApplications.Where(u=>u.UserId==Convert.ToInt32(userid) && u.MissionId== missionid).ToList();
+            if (app.Count()!=0)
+            {
+                volunteeringVM.isapplied = 1;
+            }
+            else
+            {
+                volunteeringVM.isapplied = 0;
+            }
+            ViewBag.isapplied = volunteeringVM.isapplied;
+
             var fav = volunteeringVM.favoriteMissions.FirstOrDefault(u => u.UserId == Convert.ToInt32(userid) && u.MissionId == missionId);
             ViewBag.fav = fav;
 
@@ -415,7 +412,7 @@ namespace CI_Platform1.Controllers
                 }
                 finalrating = rat / ratinglist.Count();
             }
-            ViewBag.finalrating=finalrating;
+            ViewBag.finalrating = finalrating;
             ViewBag.totalvol = ratinglist.Count();
             ViewBag.Missiondetail = volunteeringVM;
 
@@ -484,6 +481,18 @@ namespace CI_Platform1.Controllers
             return View(storylist);
         }
 
+        //Applied
+        public IActionResult Applied(int missonid)
+        {
+            var userid = HttpContext.Session.GetString("userID");
+            ViewBag.UserId = int.Parse(userid);
+
+            _Interface.ApplyMission(missonid, Convert.ToInt32(userid));
+            //return View();
+            return RedirectToAction("volunteering", new { id = Convert.ToInt64(HttpContext.Session.GetString("userID")), missionid = missonid });
+
+        }
+
         //Story Detail
         public IActionResult StoryDetail()
         {
@@ -504,8 +513,37 @@ namespace CI_Platform1.Controllers
 
         public IActionResult Storyshare()
         {
-            return View();
+
+            //LandingPageVM lp = new LandingPageVM();
+            StoryShareVM ss = new StoryShareVM();
+            ss.missions = _Landing.missions();
+            ss.missionApplications = _Landing.missionApplications();
+
+            return View(ss);
         }
+
+        [HttpPost]
+        public IActionResult Storyshare(StoryShareVM ss)
+        {
+            var userid = HttpContext.Session.GetString("userID");
+            ViewBag.UserId = int.Parse(userid);
+            //IEnumerable<Mission> missions = _db.Missions.ToList();
+            //ViewData["mission"] = _db.MissionApplications.ToList();
+            ss.missions = _Landing.missions();
+            ss.missionApplications = _Landing.missionApplications().Where(u => u.UserId == Convert.ToInt32(userid)).ToList();
+
+            Story stories = new Story();
+            stories.UserId = Convert.ToInt64(HttpContext.Session.GetString("userID"));
+            stories.MissionId = ss.MissionId;
+            stories.Title = ss.Title;
+            stories.Description = ss.Description;
+            stories.Status = "DRAFT";
+            stories.CreatedAt = DateTime.Now;
+            _CiPlatformContext.Stories.Add(stories);
+            _CiPlatformContext.SaveChanges();
+            return View(ss);
+        }
+
 
         private void ToList()
         {
@@ -536,20 +574,6 @@ namespace CI_Platform1.Controllers
             {
                 //var tempFav = _IUser.favoriteMissions().Where(e => (e.MissionId == missonid) && (e.UserId == Convert.ToInt32(userId))).FirstOrDefault();
                 _Interface.FavMission(missonid, Convert.ToInt32(userId));
-
-                //if (tempFav == null)
-                //{
-                // _IUser.addfav(missonid, Convert.ToInt32(userId));
-                // FavoriteMission fm = new FavoriteMission();
-                // fm.UserId = Convert.ToInt32(userId);
-                // fm.MissionId = missonid;
-                //_CIDbContext.Add(fm);
-                //}
-                //else
-                //{
-                // _CIDbContext.Remove(tempFav);
-                //}
-                //_CIDbContext.SaveChanges();
 
             }
             return RedirectToAction("Volunteering", new { id = int.Parse(userId), missionid = missonid });
@@ -583,7 +607,7 @@ namespace CI_Platform1.Controllers
                 //_CIDbContext.SaveChanges();
 
             }
-            return RedirectToAction("Volunteering", new { id = int.Parse(userId), missionid = missonid });
+            return RedirectToAction("_Missions", new { id = int.Parse(userId), missionid = missonid });
 
         }
 
@@ -662,7 +686,7 @@ namespace CI_Platform1.Controllers
         }
 
         //-----------------Rating-----------------
-        public IActionResult Addrating(int rating, long missionId, long Id )
+        public IActionResult Addrating(int rating, long missionId, long Id)
         {
             MissionRating ratingExists = _Interface.MissionratingByUserid_Missionid(Id, missionId);
             if (ratingExists != null)

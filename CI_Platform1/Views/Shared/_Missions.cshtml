@@ -91,6 +91,8 @@
                     <li><a class="dropdown-item" onclick="mysearch(order=3)">End Date</a></li>
                     <li><a class="dropdown-item" onclick="mysearch(order=4)">Availbility</a></li>
                     <li><a class="dropdown-item" onclick="mysearch(order=5)">Theme</a></li>
+                    <li><a class="dropdown-item" onclick="mysearch(order=6)">Favrouite</a></li>
+
 
                 </ul>
             </div>
@@ -139,11 +141,10 @@
                         }
                         else
                         {
-@*                            <button class="heart align-items-center px-2 py-1 Addfavourite favmissiondiv" onclick="addToFav(@category.MissionId)">
-                                <span id="boot-icon" class="bi bi-heart" style="font-size: 20px; color:red;"></span>
-                            </button>*@
                             <button class="btn ton Addfavourite heart align-items-center px-2 py-1 favmissiondiv" onclick="addToFav(@category.MissionId)">
                                 <span id="boot-icon" class="bi bi-heart-fill" style="font-size: 20px; color: rgb(255, 0, 0);"></span>
+                            <label class="ms-2" id="favmissiondiv" style="color:red;">Remove From Favourite</label>
+
                             </button>
                         }
 
@@ -202,7 +203,7 @@
                             
                             <div class="ms-auto">
                                @if (avg!=0)
-                                {
+                               {
                                     @for (var i = 0; i <avg; i++)
                                     {
                                         count++;
@@ -213,7 +214,12 @@
                                     {
                                         <img src="~/images/star.png">
                                     }
-                                }
+                               }
+
+                               @if(avg==0)
+                               {
+                                   <div class="ms-auto text-danger"> Not Rated</div>
+                               }
 
                             </div>
 

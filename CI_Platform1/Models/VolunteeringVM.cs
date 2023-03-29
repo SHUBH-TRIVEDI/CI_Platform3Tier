@@ -62,6 +62,8 @@ namespace CI_Platform1.Models
 
         public long? Rating { get; set; }
 
+        public int? isapplied { get; set; }
+
 
     }
 }
