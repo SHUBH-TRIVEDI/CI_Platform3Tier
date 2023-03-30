@@ -46,27 +46,34 @@
                     </ul>
 
 
-
-                    <div class="dropdown text-end ms-auto col-6">
-                        <img src="~/Images/user-img.png" alt="mdo" width="30" height="30"
+                    @if (ViewBag.user != null)
+                    {
+                        <div class="dropdown text-end ms-auto col-6">
+                            <img src="~/Images/user-img.png" alt="mdo" width="30" height="30"
                              class="rounded-circle profile">
 
-                        <button class="btn dropdown-toggle " type="button" id="dropdownMenuButton1"
+                            <button class="btn dropdown-toggle " type="button" id="dropdownMenuButton1"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                            @{
-                                var firstname = Context.Session.GetString("Firstname");
-                            }
-                            @firstname
-                             
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">Dashboard</a></li>
-                            <li><a class="dropdown-item" href="#">MY Account</a></li>
-                            <li><a class="dropdown-item" href="#">Helpcentre</a></li>
-                            <li><a class="dropdown-item" asp-action="Login" asp-controller="Home"> Logout</a></li>
-                        </ul>
-                    </div>
+                                @{
+                                    var firstname = Context.Session.GetString("Firstname");
+                                }
+                                @firstname
 
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                <li><a class="dropdown-item" href="#">MY Account</a></li>
+                                <li><a class="dropdown-item" href="#">Helpcentre</a></li>
+                                <li><a class="dropdown-item" asp-action="Login" asp-controller="Home"> Logout</a></li>
+                            </ul>
+                        </div>
+                    }
+
+                    else
+                    {
+                        <a asp-action="Login" asp-controller="Home" class="btn btn-success">Login</a>
+
+                    }
                 </div>
             </div>
         </header>

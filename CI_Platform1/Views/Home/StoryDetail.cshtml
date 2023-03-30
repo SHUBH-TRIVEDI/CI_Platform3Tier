@@ -1,10 +1,6 @@
-﻿@using CI_Entities1.Models.NewFolder
-@model Storylist
+﻿@using CI_Entities1.Models.ViewModel
+@model StoryShareVM
 
-@*@{
-var user= Model.User8.FirstOrDefault(u=> u.UserId== Model.Stories.user)
-}
-*@
 <partial name="Navbar1" />
 
 <!DOCTYPE html>
@@ -93,7 +89,7 @@ var user= Model.User8.FirstOrDefault(u=> u.UserId== Model.Stories.user)
                     <div class="mt-5 "><img src="/Images/volunteer2.png" class="rounded-circle" alt=""></div>
 
                     <div class="d-flex justify-content-between">
-                        <div>@Model.User8.</div>
+                        <div></div>
                         <div class="btn border eye"><i class="bi bi-eye"></i> 12000 Views</div>
                     </div>
                 </div>
@@ -103,11 +99,7 @@ var user= Model.User8.FirstOrDefault(u=> u.UserId== Model.Stories.user)
                     Impedit sit aut voluptates blanditiis cum officia debitis earum optio architecto praesentium vero.
                 </div>
 
-@*                <div class="ms-5">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Impedit sit aut voluptates blanditiis cum officia debitis earum optio architecto exercitationem
-                    asperiores magnam qui pariatur animi dolores, nulla facere praesentium vero.
-                </div>*@
+
 
                 <div class="ms-5">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.earum optio architecto exercitationem
@@ -152,8 +144,10 @@ var user= Model.User8.FirstOrDefault(u=> u.UserId== Model.Stories.user)
                     </div>
 
                     <button class="btn col me-3 Addfavourite ton ms-2 ">
+                        <a asp-action="volunteering" asp-controller="Home" > 
                         <label class="ms-2" id="favmissiondiv">Open Mission</label>
                         <img class="ms-1" src="/Images/right-arrow.png">
+                        </a>
                     </button>
                 </div>
 

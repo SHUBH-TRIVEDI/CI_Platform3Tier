@@ -64,8 +64,5 @@ namespace CI_Project.Repository.Repository
             return _CiPlatformContext.FavoriteMissions.ToList();
         }
 
-
-
-
     }
 }
