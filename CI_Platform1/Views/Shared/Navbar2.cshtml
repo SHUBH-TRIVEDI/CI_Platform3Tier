@@ -1,98 +1,46 @@
 ﻿@using CI_Entities1.Models.ViewModel
 @model LandingPageVM
 
-<style>
-    
-/*filter sided bar*/
-.sidefilter {
-height: 100%;
-width: 0;
-position: fixed;
-z-index: 1;
-top: 0;
-left: 0;
-background-color: #FFF;
-overflow-x: hidden;
-transition: 0.5s;
-padding-top: 60px;
-box-shadow: 3px 3px 20px rgba(0,0,0,0.2);
-z-index:1000;
-}
 
-.sidefilter a {
-padding: 8px 8px 8px 32px;
-text-decoration: none;
-font-size: 20px;
-color: #818181;
-display: block;
-transition: 0.3s;
-}
-
-.sidefilter .closebtn {
-position: absolute;
-top: 0;
-right: 25px;
-font-size: 36px;
-margin-left: 50px;
-}
-
-/*.sidefilter {
-padding-top: 15px;
-}
-
-.sidefilter a {
-font-size: 18px;
-}
-}
-.form-check-input:checked {
-background-color: #F88634;
-border: #F88634;
-}
-#country-contant ul,#city-contant ul,#theme-contant ul,#skill-contant ul{
-list-style: none;
-}*/
-</style>
-<link href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
 @*sidebar for filter process*@
 <div id="mySidefilter" class="sidefilter d-block d-sm-none">
-    <a href="javascript:void(0)" class="closebtn float-start" onclick="closeFilter()"><img src="~/images/left.png"/></a>
+    <a href="javascript:void(0)" class="closebtn float-start" onclick="closeFilter()"><img src="~/images/left.png" /></a>
     <ul class="navbar-nav px-3">
         <li class="px-1">
-            <a class="text-muted" data-toggle="collapse" href="#country-contant" role="button" aria-expanded="false" aria-controls="collapseExample">
-                <span class="pe-2">Country</span>
+            <button class="btn dropdown-toggle d-inline-flex justify-content-between align-items-center" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                <span>Country</span>
                 <img src="~/images/drop-down.png" />
-            </a>
-            <div class="collapse mx-2" id="country-contant">
-                <ul id="countryName" name="countryName" onchange="mysearch(jpg = 1, jid = 0);mystory(jpg = 1);" style="height:140px; width:max-content; overflow-y: auto;">
-                    @foreach (var i in Model.countries)
-                    {
-                        <li>
-                            <a class="dropdown-item" href="#">
-                                <div class="form-check">
-                                    <input class="form-check-input countryName" name="countryName" type="checkbox" value="@i.CountryId" id="countryName" />
-                                    <label class="form-check-label" for="CountryName">@i.Name</label>
-                                </div>
-                            </a>
-                        </li>
-                    }
-                </ul>
-            </div>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" onchange="mysearch()" style="height:140px; width:max-content; overflow-y: auto;">
+                @foreach (var i in Model.countries)
+                {
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <div class="form-check">
+                                <input class="form-check-input theme" name="country" type="checkbox" value="@i.Name" id="Checkme1" />
+                                <label class="form-check-label" for="Checkme1">@i.Name</label>
+                            </div>
+                        </a>
+                    </li>
+                }
+            </ul>
         </li>
-        
+
         <li class="px-1">
             <a class="text-muted" data-toggle="collapse" href="#city-contant" role="button" aria-expanded="false" aria-controls="collapseExample">
                 <span class="pe-2">City</span>
                 <img src="~/images/drop-down.png" />
             </a>
             <div class="collapse mx-2" id="city-contant">
-                <ul id="cityName" name="cityName" onchange="mysearch(jpg = 1, jid = 0);mystory(jpg = 1);" style="height:140px; width:max-content; overflow-y: auto;">
-                    @foreach (var i in Model.cities)
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" onchange="mysearch()" style="height:140px; width:max-content; overflow-y: auto;">
+                    @foreach (var i in Model.missionThemes)
                     {
                         <li>
                             <a class="dropdown-item" href="#">
                                 <div class="form-check">
-                                    <input class="form-check-input cityName" name="cityName" type="checkbox" value="@i.CityId" id="Checkme1" />
-                                    <label class="form-check-label" for="Checkme1">@i.Name</label>
+                                    <input class="form-check-input theme" name="theme" type="checkbox" value="@i.Title" id="Checkme1" />
+                                    <label class="form-check-label" for="Checkme1">@i.Title</label>
                                 </div>
                             </a>
                         </li>
@@ -107,13 +55,13 @@ list-style: none;
                 <img src="~/images/drop-down.png" />
             </a>
             <div class="collapse mx-2" id="theme-contant">
-                <ul id="theme" name="theme" onchange="mysearch(jpg = 1, jid = 0);mystory(jpg = 1);" style="height:140px; width:max-content; overflow-y: auto;">
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" onchange="mysearch()" style="height:140px; width:max-content; overflow-y: auto;">
                     @foreach (var i in Model.missionThemes)
                     {
                         <li>
                             <a class="dropdown-item" href="#">
                                 <div class="form-check">
-                                    <input class="form-check-input theme" name="theme" type="checkbox" value="@i.MissionThemeId" id="Checkme1" />
+                                    <input class="form-check-input theme" name="theme" type="checkbox" value="@i.Title" id="Checkme1" />
                                     <label class="form-check-label" for="Checkme1">@i.Title</label>
                                 </div>
                             </a>
@@ -128,23 +76,23 @@ list-style: none;
                 <span class="pe-2">Skill</span>
                 <img src="~/images/drop-down.png" />
             </a>
-@*            <div class="collapse mx-2" id="skill-contant">
+            @*            <div class="collapse mx-2" id="skill-contant">
                 <ul class="dropdown-menu" aria-labelledby="skill" id="skill" name="skill" onchange="mysearch(jpg = 1, jid = 0);mystory(jpg = 1);">
-                    @foreach (var i in Model.skills)
-                    {
-                        <li>
-                            <a class="dropdown-item" href="#">
-                                <div class="form-check">
-                                    <input class="form-check-input skill" name="skill" type="checkbox" value="@i.SkillId" id="Checkme1" />
-                                    <label class="form-check-label" for="Checkme1">@i.SkillName</label>
-                                </div>
-                            </a>
-                        </li>
-                    }
+                @foreach (var i in Model.skills)
+                {
+                <li>
+                <a class="dropdown-item" href="#">
+                <div class="form-check">
+                <input class="form-check-input skill" name="skill" type="checkbox" value="@i.SkillId" id="Checkme1" />
+                <label class="form-check-label" for="Checkme1">@i.SkillName</label>
+                </div>
+                </a>
+                </li>
+                }
                 </ul>
-            </div>*@
+                </div>*@
         </li>
-        
+
     </ul>
 </div>
 
@@ -157,7 +105,7 @@ list-style: none;
                     <label class="input-group-text border-0 bg-transparent search-icon px-0" for="search-addon">
                         <img src="~/images/search.png" />
                     </label>
-                    <input onkeyup="mysearch()" id="search-addon" name="searchText" type="search" class="searchbar form-control rounded border-0 fs-5 btn-outline-light" placeholder="Search mission..."  />
+                    <input onkeyup="mysearch()" id="search-addon" name="searchText" type="search" class="searchbar form-control rounded border-0 fs-5 btn-outline-light" placeholder="Search mission..." />
                     <div class="d-inline-flex align-items-center px-3"><img class="d-sm-none d-block" onclick="openFilter()" src="~/images/filter.png" /></div>
                 </div>
             </form>
@@ -171,7 +119,7 @@ list-style: none;
                         <img src="~/images/drop-down.png" />
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" onchange="mysearch()" style="height:140px; width:max-content; overflow-y: auto;">
-                         @foreach (var i in Model.countries)
+                        @foreach (var i in Model.countries)
                         {
                             <li>
                                 <a class="dropdown-item" href="#">
@@ -191,7 +139,7 @@ list-style: none;
                         <img src="~/images/drop-down.png" />
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" onchange="mysearch()" style="height:140px; width:max-content; overflow-y: auto;">
-                         @foreach (var i in Model.cities)
+                        @foreach (var i in Model.cities)
                         {
                             <li>
                                 <a class="dropdown-item" href="#">
@@ -202,7 +150,7 @@ list-style: none;
                                 </a>
                             </li>
                         }
-                    </ul>           
+                    </ul>
                 </div>
                 <div class="btn-group filter-dropdown dropdown col-sm-3 border px-0">
                     <button class="btn dropdown-toggle d-inline-flex justify-content-between align-items-center" type="button" id="dropdownMenuButton1"
@@ -211,7 +159,7 @@ list-style: none;
                         <img src="~/images/drop-down.png" />
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" onchange="mysearch()" style="height:140px; width:max-content; overflow-y: auto;">
-                         @foreach (var i in Model.missionThemes)
+                        @foreach (var i in Model.missionThemes)
                         {
                             <li>
                                 <a class="dropdown-item" href="#">
@@ -229,24 +177,46 @@ list-style: none;
                         <span>Skill</span>
                         <img src="~/images/drop-down.png" />
                     </div>
-@*                    <ul class="dropdown-menu" aria-labelledby="skill" id="skill" name="skill" onchange="mysearch(jpg = 1, jid = 0);mystory(jpg = 1);">
+                    @*                    <ul class="dropdown-menu" aria-labelledby="skill" id="skill" name="skill" onchange="mysearch(jpg = 1, jid = 0);mystory(jpg = 1);">
                         @foreach (var i in Model.skills)
                         {
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    <div class="form-check">
-                                        <input class="form-check-input skill" name="skill" type="checkbox" value="@i.SkillId" id="Checkme1" />
-                                        <label class="form-check-label" for="Checkme1">@i.SkillName</label>
-                                    </div>
-                                </a>
-                            </li>
+                        <li>
+                        <a class="dropdown-item" href="#">
+                        <div class="form-check">
+                        <input class="form-check-input skill" name="skill" type="checkbox" value="@i.SkillId" id="Checkme1" />
+                        <label class="form-check-label" for="Checkme1">@i.SkillName</label>
+                        </div>
+                        </a>
+                        </li>
                         }
-                    </ul>*@
-                </div>            
+                        </ul>*@
+                </div>
             </div>
         </div>
     </div>
-</div> 
+    <div id="filters-section" class="my-3">
+    </div>
+</div>
 
-@*<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+<script>
+        /*for side bar*/
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+
+    function openFilter() {
+        document.getElementById("mySidefilter").style.width = "250px";
+    }
+
+    function closeFilter() {
+        document.getElementById("mySidefilter").style.width = "0";
+    }
+</script>
+
+
 

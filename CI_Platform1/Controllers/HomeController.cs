@@ -493,7 +493,7 @@ namespace CI_Platform1.Controllers
             //Pagination
 
             ViewBag.missionCount = storylist.Stories.Count();
-            const int pageSize = 15;
+            const int pageSize = 6;
             if (jpg < 1)
             {
                 jpg = 1;
@@ -524,6 +524,7 @@ namespace CI_Platform1.Controllers
 
         public IActionResult nomissionfound()
         {
+            
             return View();
         }
 
@@ -545,6 +546,35 @@ namespace CI_Platform1.Controllers
 
             //st.user_id = _CiPlatformContext.Users.ToList();
             return View(st);
+        }
+
+        public IActionResult _StoryList(int jpg)
+        {
+            StorylistVM storylist = new StorylistVM();
+
+            storylist.Stories = _CiPlatformContext.Stories.ToList();
+
+            storylist.User8 = _CiPlatformContext.Users.ToList();
+
+            storylist.Mission8 = _CiPlatformContext.Missions.ToList();
+            storylist.missionThemes = _CiPlatformContext.MissionThemes.ToList();
+            storylist.storymedia = _CiPlatformContext.StoryMedia.ToList();
+
+            ViewBag.missionCount = storylist.Stories.Count();
+            const int pageSize = 6;
+            if (jpg < 1)
+            {
+                jpg = 1;
+            }
+            int recsCount = storylist.Stories.Count();
+            var pager = new Pager(recsCount, jpg, pageSize);
+            int recSkip = (jpg - 1) * pageSize;
+            var data = storylist.Stories.Skip(recSkip).Take(pager.PageSize).ToList();
+            this.ViewBag.pager = pager;
+            ViewBag.missionTempDate = data;
+            storylist.Stories = data.ToList();
+            ViewBag.TotalMission = recsCount;
+            return PartialView("_StoryList",storylist);
         }
 
         public IActionResult Storyshare()

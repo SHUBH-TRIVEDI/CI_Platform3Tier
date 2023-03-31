@@ -333,30 +333,30 @@
 @*
     <script>
 
-    //List and Grid View
-    function showList(e) {
-    var imgdiv = document.querySelectorAll('.imgdiv');
-    var missionimg = document.querySelectorAll('.missionimg');
+    //list and grid view
+    function showlist(e) {
+    var imgdiv = document.queryselectorall('.imgdiv');
+    var missionimg = document.queryselectorall('.missionimg');
 
-    var $gridCont = $('.grid-container');
-    e.preventDefault();
-    //$gridCont.hasClass('list-view') ? $gridCont.removeClass('list-view') : $gridCont.addClass('list-view');
-    $gridCont.removeClass('grid-view');
-    $gridCont.addClass('list-view');
+    var $gridcont = $('.grid-container');
+    e.preventdefault();
+    //$gridcont.hasclass('list-view') ? $gridcont.removeclass('list-view') : $gridcont.addclass('list-view');
+    $gridcont.removeclass('grid-view');
+    $gridcont.addclass('list-view');
     for (var item of imgdiv) {
     item.style.width = "36%";
     }
 
     }
-    function gridList(e) {
-    var imgdiv = document.querySelectorAll('.imgdiv');
-    var missionimg = document.querySelectorAll('.missionimg');
-    var $gridCont = $('.grid-container')
-    e.preventDefault();
-    //$gridCont.removeClass('list-view');
+    function gridlist(e) {
+    var imgdiv = document.queryselectorall('.imgdiv');
+    var missionimg = document.queryselectorall('.missionimg');
+    var $gridcont = $('.grid-container')
+    e.preventdefault();
+    //$gridcont.removeclass('list-view');
 
-    $gridCont.removeClass('list-view');
-    $gridCont.addClass('grid-view');
+    $gridcont.removeclass('list-view');
+    $gridcont.addclass('grid-view');
     for (var item of imgdiv) {
     item.style.width = "100%";
     }
@@ -366,27 +366,27 @@
     }
     }
 
-    $(document).on('click', '.btn-grid', gridList);
-    $(document).on('click', '.btn-list', showList);
+    $(document).on('click', '.btn-grid', gridlist);
+    $(document).on('click', '.btn-list', showlist);
 
 
 
-    //--------------------------Add to Favroite Mission--------------------------------------------
-    function addtofav1(missionId, Id) {
+    //--------------------------add to favroite mission--------------------------------------------
+    function addtofav1(missionid, id) {
     $.ajax({
-    url: '/Home/Addfav',
-    type: 'POST',
-    data: { missionId: missionId, Id: Id },
+    url: '/home/addfav',
+    type: 'post',
+    data: { missionid: missionid, id: id },
     success: function (result) {
     if (result.favmission == "0") {
-    var favbtn = document.getElementById("favmissiondiv");
-    var heartbtn = document.getElementById("heart");
-    heartbtn.style.color = "#F88634";
+    var favbtn = document.getelementbyid("favmissiondiv");
+    var heartbtn = document.getelementbyid("heart");
+    heartbtn.style.color = "#f88634";
     favbtn.style.color = "orange"
     }
     else {
-    var favbtn = document.getElementById("favmissiondiv");
-    var heartbtn = document.getElementById("heart");
+    var favbtn = document.getelementbyid("favmissiondiv");
+    var heartbtn = document.getelementbyid("heart");
     heartbtn.style.color = "black";
     favbtn.style.color = "black"
     }
@@ -394,26 +394,26 @@
     });
     }
 
-    //Reccomend to coworker
+    //reccomend to coworker
     function sendmail(id) {
-    const mail = Array.from(document.querySelectorAll('input[name="mail"]:checked')).map(el => el.id);
-    var send = document.getElementById("sendmail");
-    send.innerHTML = "Sending"
+    const mail = array.from(document.queryselectorall('input[name="mail"]:checked')).map(el => el.id);
+    var send = document.getelementbyid("sendmail");
+    send.innerhtml = "sending"
     $.ajax({
-    url: '/Home/Sendmail',
-    type: 'POST',
+    url: '/home/sendmail',
+    type: 'post',
     data: { userid: mail, id: id },
     success: function (result) {
-    alert("Recomendations sent successfully!");
-    const checkboxes = document.querySelectorAll('input[name="mail"]:checked');
-    checkboxes.forEach((checkbox) => {
+    alert("recomendations sent successfully!");
+    const checkboxes = document.queryselectorall('input[name="mail"]:checked');
+    checkboxes.foreach((checkbox) => {
     checkbox.checked = false;
     });
-    send.innerHTML = "sent"
+    send.innerhtml = "sent"
     },
     error: function () {
-    // Handle error response from the server, e.g. show an error message to the user
-    alert('Error: Could not recommend mission.');
+    // handle error response from the server, e.g. show an error message to the user
+    alert('error: could not recommend mission.');
     }
     });
 

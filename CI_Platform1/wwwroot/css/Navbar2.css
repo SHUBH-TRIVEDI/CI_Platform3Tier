@@ -1,6 +1,59 @@
-﻿.filter-list {
-    / padding:6px 10px;
-    / background-color: white;
+﻿/*filter sided bar*/
+.sidefilter {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #FFF;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 3px 3px 20px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.sidefilter a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+}
+
+.sidefilter .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) 
+{
+    .sidefilter {
+        padding-top: 15px;
+    }
+
+    .sidefilter a {
+            font-size: 18px;
+    }
+}
+
+.form-check-input:checked {
+    background-color: #F88634;
+    border: #F88634;
+}
+
+#country-contant ul, #city-contant ul, #theme-contant ul, #skill-contant ul {
+    list-style: none;
+}
+
+.filter-list {
+    padding:6px 10px;
+    background-color: white;
     border: 1px solid #808080;
     border-radius: 20px;
     color: #000;

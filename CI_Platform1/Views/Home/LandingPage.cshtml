@@ -1,5 +1,5 @@
 ﻿
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
+@*<script src="~/lib/jquery/dist/jquery.min.js"></script>*@
 <partial name="Navbar1" />
 
 <partial name="Navbar2" />
@@ -7,7 +7,6 @@
 <div id="missiondetails"></div>
 
 @*<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.min.js"></script>*@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
 
 <script>
@@ -47,6 +46,7 @@
 
     $(document).ready(function() {
         mysearch();
+        console.log("hello shubh");
     });
 
 
@@ -116,6 +116,77 @@
         });
     }
 
+    //Filter Buttons
+var checkboxes=document.querySelectorAll(".form-check-input");
+for (var checkbox of checkboxes) {
+    checkbox.addEventListener("click", function () {
+        if (this.checked == true) {
+            addElement(this, this.value);
+        }
+        else {
+            removeElement(this.value);
+        }
+    })
+}
+
+/*this function will add filters*/
+
+
+
+function addElement(current, value) {
+    let filtersSection = document.querySelector("#filters-section");
+
+    let createdTag = document.createElement('span');
+    createdTag.classList.add('filter-list');
+    createdTag.classList.add('p-1');
+    createdTag.classList.add('ps-3');
+    createdTag.classList.add('border');
+    createdTag.classList.add('border-1');
+    createdTag.classList.add('rounded-pill');
+    createdTag.classList.add('pe-1');
+    createdTag.classList.add('me-2');
+    createdTag.innerHTML = value;
+
+    createdTag.setAttribute('id', value);
+    let crossButton = document.createElement('button');
+    crossButton.classList.add("filter-close-button");
+    crossButton.classList.add("border-0");
+    crossButton.classList.add("me-2");
+    crossButton.classList.add("bg-white");
+    let cross = '&times';
+
+    crossButton.addEventListener('click', function () {
+        let elementToBeRemoved = document.getElementById(value);
+
+        console.log(elementToBeRemoved);
+        console.log(current);
+        elementToBeRemoved.remove();
+
+        current.checked = false;
+
+        mysearch();
+    })
+
+    crossButton.innerHTML = cross;
+
+    createdTag.appendChild(crossButton);
+    filtersSection.appendChild(createdTag);
+
+    mysearch();
+
+}
+
+function removeElement(value) {
+
+    let filtersSection = document.querySelector("#filters-section");
+
+    let elementToBeRemoved = document.getElementById(value);
+    filtersSection.removeChild(elementToBeRemoved);
+
+    mysearch();
+
+}
+
 
     //Script
 
@@ -183,4 +254,3 @@
 
 
 </script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>

@@ -1,20 +1,20 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 
@@ -79,15 +79,9 @@ input#Search {
 
 
 /*              card css */
-.cardbtn {
-    border: 1px solid #fd7e14;
-    border-radius: 22px;
-    /* justify-self: center; */
+.cardbtn span {
+    color: #fd7e14;
 }
-
-    .cardbtn span {
-        color: #fd7e14;
-    }
 
 .star {
     height: 1rem;

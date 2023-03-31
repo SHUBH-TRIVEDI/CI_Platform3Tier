@@ -1,0 +1,85 @@
+﻿@using CI_Entities1.Models.ViewModel
+@model StorylistVM
+
+@{
+    Pager pager = new Pager();
+    int pageNo = 0;
+    //int jpg = 0;
+    if (ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+
+
+<div class="container grid-container">
+    <div class="row mt-3 mb-3">
+        @foreach (var item in Model.Stories)
+        {
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="d-inline imgdiv position-relative">
+                        <div id="change">
+                            <img src="/Images/Grow-Trees-On-the-path-to-environment-sustainability-login.png"
+                             class="card-img-top missionimg" alt="...">
+                            <button class="btn cardbtn btn-view" onclick="viewdetails()">
+                                <a asp-controller="Home" asp-action="StoryDetail" class="text-decoration-none text-black">View details </a><i class="bi bi-arrow-right ms-2 mt-3 "></i>
+                            </button>
+                            <div class="rule" style="margin-top:-20px !important;">
+                                <hr>
+                                <button class="hrbtn-img">@item.Mission.Theme.Title</button>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card-body">
+                        <h5 class="card-title" style="overflow: hidden; display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;">@item.Title</h5>
+                        <p class="card-text text-secondary" style="overflow: hidden; display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;">@Html.Raw(@item.Description)</p>
+
+
+                        <div class="col column2">
+                            <img src="../Images/volunteer4.png" class="rounded-circle me-1"
+                             style="height:30px;width:30px" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+@*pagination*@
+@if (pager.TotalPages > 0)
+{
+    <ul class="pagination justify-content-center">
+        @if (pager.CurrentPage > 1)
+        {
+            <li class="mx-1">
+                <a class="page-link text-muted" onclick="pagination(jpg=1)"><span aria-hidden="true">&laquo;</span></a>
+            </li>
+            <li class="page-item mx-1">
+                <a class="page-link text-muted" onclick="pagination(jpg=@(pager.CurrentPage-1))"><span aria-hidden="true">&lsaquo;</span></a>
+            </li>
+        }
+        @for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
+        {
+            <li class="page-item mx-1 @(pge==pager.CurrentPage ? "active":"")">
+                <a class="page-link text-muted" onclick="pagination(jpg=@pge)">@pge</a>
+            </li>
+        }
+        @if (pager.CurrentPage < pager.TotalPages)
+        {
+            <li class="page-item mx-1">
+                <a class="page-link text-muted" onclick="pagination(jpg=@(pager.CurrentPage+1))"><span aria-hidden="true">&rsaquo;</span></a>
+            </li>
+            <li class="mx-1">
+                <a class="page-link text-muted" onclick="pagination(jpg=@(pager.TotalPages))"><span aria-hidden="true">&raquo;</span></a>
+            </li>
+        }
+
+    </ul>
+}

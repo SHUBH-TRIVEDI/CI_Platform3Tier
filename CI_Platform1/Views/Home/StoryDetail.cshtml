@@ -3,19 +3,7 @@
 
 <partial name="Navbar1" />
 
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link rel="s!importantimportantmportantylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
     <style>
         .eye {
             border-radius: 22px;
@@ -24,15 +12,13 @@
         .ton {
             border-color: #F88634;
             border-radius: 22px;
-            padding:0px !important;
-            color:#F88634;
+            padding: 0px !important;
+            color: #F88634;
         }
     </style>
 </head>
 
 <body>
-
-
     <div class="container">
         <div class="row ">
             <div class="col-12 col-lg-6 col-md-12 col-sm-12  p-1">
@@ -89,7 +75,7 @@
                     <div class="mt-5 "><img src="/Images/volunteer2.png" class="rounded-circle" alt=""></div>
 
                     <div class="d-flex justify-content-between">
-                        <div></div>
+                        <div>Name</div>
                         <div class="btn border eye"><i class="bi bi-eye"></i> 12000 Views</div>
                     </div>
                 </div>
@@ -144,9 +130,9 @@
                     </div>
 
                     <button class="btn col me-3 Addfavourite ton ms-2 ">
-                        <a asp-action="volunteering" asp-controller="Home" > 
-                        <label class="ms-2" id="favmissiondiv">Open Mission</label>
-                        <img class="ms-1" src="/Images/right-arrow.png">
+                        <a asp-action="volunteering" asp-controller="Home">
+                            <label class="ms-2" id="favmissiondiv">Open Mission</label>
+                            <img class="ms-1" src="/Images/right-arrow.png">
                         </a>
                     </button>
                 </div>
@@ -214,11 +200,8 @@
         </div>
     </div>
 
-    </div>
-    </div>
 
     <script src="~/js/Storydetail.js" asp-append-version="true"></script>
 
 </body>
 
-</html>
