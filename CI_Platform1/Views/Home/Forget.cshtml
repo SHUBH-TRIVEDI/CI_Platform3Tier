@@ -23,6 +23,8 @@
                     <input type="email" placeholder="Enter Your e-mail"
                            class="form-control shadow-none" id="exampleInputEmail1"
                            aria-describedby="emailHelp" asp-for="Email" required>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+
 
                     <button type="submit" value="login" class="btn
                             btn-outline-success mt-3 shadow-none">

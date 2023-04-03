@@ -19,6 +19,7 @@ namespace CI_Entities1.Models.ViewModel
         public List<GoalMission> goalMissions { get; set; }
         public List<MissionApplication> missionApplications { get; set; }
 
+        public List<Comment> comments { get; set; }
 
         public List<Story> stories { get; set; }
     }

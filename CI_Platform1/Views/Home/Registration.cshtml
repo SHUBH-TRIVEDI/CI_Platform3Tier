@@ -1,4 +1,5 @@
-﻿@model CI_Entities1.Models.User
+﻿@using CI_Platform1.Models
+@model RegistrationViewModel
 
 <head>
     <link rel="stylesheet" href="~/css/registration.css" asp-append-version="true">
@@ -18,14 +19,20 @@
 
                         <label asp-for="FirstName" class="form-label ">First Name</label>
                         <input asp-for="FirstName" type="text" placeholder="  evan" class="form-control shadow-none" required>
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+
                     </div>
                     <div class="">
                         <label asp-for="LastName" class="form-label">Last Name</label>
                         <input asp-for="LastName" type="text" placeholder="  donohue" class="form-control shadow-none" required>
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+
                     </div>
                     <div>
                         <label asp-for="PhoneNumber" class="form-label">Phone Number</label>
                         <input asp-for="PhoneNumber" type="tel" placeholder="  8866123456" class="form-control shadow-none" required>
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
                     </div>
                     <div>
                         <label asp-for="Email" class="form-label">Email Address</label>
@@ -37,12 +44,14 @@
                         <label asp-for="Password" class="form-label" required>Password</label>
                         <input asp-for="Password" type="password"
                                class="form-control shadow-none">
-
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div>
                         <label asp-for="Password" for="exampleInputEmail1" class="form-label" required>
                             Confirm Password
                         </label>
-                        <input asp-for="Password" type="password"
-                               class="form-control shadow-none">
+                        <input asp-for="Password" type="password" class="form-control shadow-none">
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                     </div>
 
                     <button type="submit" value="login" class="btn

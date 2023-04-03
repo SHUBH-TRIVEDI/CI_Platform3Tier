@@ -1,11 +1,10 @@
-﻿@using CI_Entities1.Models.ViewModel
+﻿@*@using CI_Entities1.Models.ViewModel
+@model StoryShareVM*@
+@using CI_Entities1.Models.ViewModel
 @model StoryShareVM
 
-
 <partial name="Navbar1" />
-
-<!DOCTYPE html>
-<html lang="en">    
+   
 
 <head>
     <title>Share Story</title>
@@ -31,7 +30,7 @@
                                 <option value="@mission.MissionId">@mission.MissionId@mission.Mission.Title</option>
                             }
                         </select>
-                    </div>
+                    </div>q
                 </div>
 
                 <div class="col-4">
@@ -66,17 +65,17 @@
 
             <div class="d-flex bd-highlight mb-3">
                 <div class="me-auto p-2">
-                    <button type="button" class="btn btn-outline-secondary px-3 me-auto shadow-none"  style="border-radius: 22px;">
+                    <button type="submit" name="action" value="cancel" class="btn btn-outline-secondary px-3 me-auto shadow-none"  style="border-radius: 22px;">
                         Cancel
                     </button>
                 </div>
                 <div class="p-2">
-                    <button type="button" class="btn cardbtn px-3 shadow-none">
+                    <button type="submit" name="action" value="save" class="btn cardbtn px-3 shadow-none">
                         Save
                     </button>
                 </div>
                 <div class="p-2">
-                    <button type="submit" class="btn cardbtn px-3 shadow-none">
+                    <button type="submit" name="action" value="submit" class="btn cardbtn px-3 shadow-none">
                         Submit
                     </button>
                 </div>

@@ -23,6 +23,9 @@ namespace CI_Entities1.Models.ViewModel
 
         public DateTime? PublishedAt { get; set; }
 
+        public DateTime? date { get; set; }
+
+
         public DateTime CreatedAt { get; set; }
 
         public DateTime? UpdatedAt { get; set; }
@@ -44,6 +47,35 @@ namespace CI_Entities1.Models.ViewModel
         public List<Mission> missions { get; set; }
 
         public List<MissionApplication> missionApplications { get; set; }
+
+
+
+        //StoryList
+        public List<Story> Stories { get; set; }
+
+        public List<City> cities { get; set; }
+
+        public List<Country> countries { get; set; }
+
+        public List<MissionTheme> missionThemes { get; set; }
+
+        public List<StoryMedium> storymedia { get; set; }
+
+        public string? FirstName { get; set; }
+
+
+        //StoryDetails
+        public List<User> users { get; set; }
+
+        public int user_id { get; set; }
+        public int mission_id { get; set; }
+
+        public string username { get; set; }
+        public string? ShortDescription { get; set; }
+
+        //Story Media
+
+        public virtual Story Story { get; set; } = null!;
 
     }
 }

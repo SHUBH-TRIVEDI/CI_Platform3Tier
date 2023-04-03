@@ -6,7 +6,10 @@
 </head>
 
 <body>
+    @{
+            var userid = Context.Session.GetString("userID");
 
+    }
     @*------------NAVBAR---- 1*@
 
     <div class="row">
@@ -38,7 +41,7 @@
                     </ul>
 
 
-                    @if (ViewBag.user != null)
+                    @if (userid != null)
                     {
                         <div class="dropdown text-end ms-auto col-6">
                             <img src="~/Images/user-img.png" alt="mdo" width="30" height="30"
@@ -55,7 +58,7 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li><a class="dropdown-item" href="#">Dashboard</a></li>
                                 <li><a class="dropdown-item" href="#">MY Account</a></li>
-                                <li><a class="dropdown-item" href="#">Helpcentre</a></li>
+                                <li><a class="dropdown-item" asp-action="Draft" asp-controller="Home">Draft</a></li>
                                 <li><a class="dropdown-item" asp-action="Login" asp-controller="Home"> Logout</a></li>
                             </ul>
                         </div>

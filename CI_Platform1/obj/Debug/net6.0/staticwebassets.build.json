@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fkYOaYfhNO+aLcbaE3YzyyEHGkfYc15zfFTFwkrfvno=",
+  "Hash": "ysNqMY6hfdNQEf1yP2MExn9jPtVVUOHilW6zjzaNzSM=",
   "Source": "CI_Platform1",
   "BasePath": "_content/CI_Platform1",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\tatva\\Desktop\\CI_Platform3Tier\\CI_Platform1\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CI_Platform1.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\tatva\\Desktop\\CI_Platform3Tier\\CI_Platform1\\wwwroot\\css\\draft.css",
+      "SourceId": "CI_Platform1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tatva\\Desktop\\CI_Platform3Tier\\CI_Platform1\\wwwroot\\",
+      "BasePath": "_content/CI_Platform1",
+      "RelativePath": "css/draft.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\draft.css"
     },
     {
       "Identity": "C:\\Users\\tatva\\Desktop\\CI_Platform3Tier\\CI_Platform1\\wwwroot\\css\\Missions.css",

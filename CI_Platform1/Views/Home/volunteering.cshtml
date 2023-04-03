@@ -1,11 +1,7 @@
-﻿@using CI_Entities1.Models
-@*@using CI_Platform1.Models
-    @model VolunteeringVM *@
+﻿@using CI_Platform1.Models
+@model VolunteeringVM 
 
 <partial name="Navbar1" />
-
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <link rel="stylesheet" type="text/css" href="~/css/volunteering.css" asp-append-version="true">
@@ -342,7 +338,7 @@
                                 <div class="panel-body">
                                     <ul class="list-group">
 
-                                        @foreach (var i in @Model[0].Comments)
+                                        @foreach (var i in @Model.comments)
                                         {
                                             <div class="comment d-flex">
                                                 <div class="">
