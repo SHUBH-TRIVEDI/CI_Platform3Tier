@@ -1,6 +1,4 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
+﻿<head>
     <title>Landing Page</title>
     <link rel="stylesheet" href="~/css/Nav1.css">
 </head>
@@ -8,7 +6,6 @@
 <body>
     @{
             var userid = Context.Session.GetString("userID");
-
     }
     @*------------NAVBAR---- 1*@
 
@@ -47,7 +44,7 @@
                             <img src="~/Images/user-img.png" alt="mdo" width="30" height="30"
                              class="rounded-circle profile">
 
-                            <button class="btn dropdown-toggle " type="button" id="dropdownMenuButton1"
+                            <button class="btn dropdown-toggle shadow-none" type="button" id="dropdownMenuButton1"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 @{
                                     var firstname = Context.Session.GetString("Firstname");
@@ -56,8 +53,8 @@
 
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
-                                <li><a class="dropdown-item" href="#">MY Account</a></li>
+                                <li><a class="dropdown-item" asp-action="LandingPage" asp-controller="Home">Dashboard</a></li>
+                                <li><a class="dropdown-item" asp-action="EditProfile" asp-controller="Home">Profile</a></li>
                                 <li><a class="dropdown-item" asp-action="Draft" asp-controller="Home">Draft</a></li>
                                 <li><a class="dropdown-item" asp-action="Login" asp-controller="Home"> Logout</a></li>
                             </ul>
@@ -66,7 +63,7 @@
 
                     else
                     {
-                        <a asp-action="Login" asp-controller="Home" class="btn btn-success">Login</a>
+                        <a asp-action="Login" asp-controller="Home" class="btn btn-success shadow-none">Login</a>
 
                     }
                 </div>

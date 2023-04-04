@@ -19,12 +19,28 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card">
                     <div class="d-inline imgdiv position-relative">
+
                         <div id="change">
-                            <img src="/Images/Grow-Trees-On-the-path-to-environment-sustainability-login.png"
+                            @{
+                                var media = Model.storymedia.Where(e => e.StoryId == item.StoryId).FirstOrDefault();
+                            }
+                            @if(media != null)
+                            {
+                                
+                            <img src="@media.StoryPath"
                              class="card-img-top missionimg" alt="...">
                             <button class="btn cardbtn btn-view" onclick="viewdetails()">
-                                <a asp-controller="Home" asp-action="StoryDetail" class="text-decoration-none text-black">View details </a><i class="bi bi-arrow-right ms-2 mt-3 "></i>
-                            </button>
+                                <a asp-controller="Home" asp-action="StoryDetail" asp-route-missionid="@item.StoryId" class="text-decoration-none text-black">View details </a><i class="bi bi-arrow-right ms-2 mt-3 "></i>
+                                </button>
+                            }
+                            else
+                            {
+                                 <img src="/images/images/CSR-initiative-stands-for-Coffee--and-Farmer-Equity-6.png"
+                             class="card-img-top missionimg" alt="...">
+                            <button class="btn cardbtn btn-view" onclick="viewdetails()">
+                                <a asp-controller="Home" asp-action="StoryDetail" asp-route-missionid="@item.StoryId" class="text-decoration-none text-black">View details </a><i class="bi bi-arrow-right ms-2 mt-3 "></i>
+                                </button>
+                            }
                             <div class="rule" style="margin-top:-20px !important;">
                                 <hr>
                                 <button class="hrbtn-img">@item.Mission.Theme.Title</button>
@@ -39,9 +55,11 @@
                         <p class="card-text text-secondary" style="overflow: hidden; display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;">@Html.Raw(@item.Description)</p>
 
 
+
                         <div class="col column2">
-                            <img src="../Images/volunteer4.png" class="rounded-circle me-1"
+                            <img src="~/images/volunteer1.png" class="rounded-circle me-1"
                              style="height:30px;width:30px" />
+                            @item.User.FirstName @item.User.LastName
                         </div>
                     </div>
                 </div>

@@ -5,6 +5,7 @@ namespace CI_Project.Repository.Interface
 {
     public interface IUser
     {
+        public void AddStoryMedia(string mediaType, string mediaPath, long missionId, long userId, long storyId, long sId);
         public MissionApplication  ApplyMission(int missonid,int userid);
         public User UserByEmail(string email);
 

@@ -9,12 +9,12 @@
             border-radius: 22px;
         }
 
-        .ton {
+/*        .ton {
             border-color: #F88634;
             border-radius: 22px;
             padding: 0px !important;
             color: #F88634;
-        }
+        }*/
     </style>
 </head>
 
@@ -73,16 +73,17 @@
             <div class="col-12 col-lg-6 col-md-12 col-sm-12 p-1 row">
                 <div class="ms-5">
                     <div class="mt-5 "><img src="/Images/volunteer2.png" class="rounded-circle" alt=""></div>
-
+                    @{
+                        var user = Model.users.Where(e => e.UserId == Model.singleStory.UserId).FirstOrDefault();
+                    }
                     <div class="d-flex justify-content-between">
-                        <div>@Model.</div>
+                        <div>@user.FirstName @user.LastName</div>
                         <div class="btn border eye"><i class="bi bi-eye"></i> 12000 Views</div>
                     </div>
                 </div>
 
                 <div class="ms-5">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Impedit sit aut voluptates blanditiis cum officia debitis earum optio architecto praesentium vero.
+                    @Model.ShortDescription
                 </div>
 
 
@@ -96,10 +97,11 @@
 
                 @*Reccomend To CO-Worker*@
                 <div class="row ms-5">
-
-                    <button class="btn col ton Addfavourite " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button class="col" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <div class="oran p-3">
                         <i class="bi bi-square-fill"></i>
-                        <span class="font-si">Recommend to a Co-Worker</span>
+                        <span class="font-si ">Recommend to a Co-Worker</span>
+                        </div>
                     </button>
 
                     <div class="modal fade modal-dialog-scrollable" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -110,12 +112,12 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body overflow-y-auto" style="height:200px;">
-                                    @foreach (var user in ViewBag.alluser)
+                                    @foreach (var u in Model.users)
                                     {
 
                                         <div class="d-flex my-3 bg-light ">
                                             <img src="~/images/volunteer1.png" class="rounded-5 me-5" style="border-radius:50%;width:50px;height:50px">
-                                            <label class=" ms-4 mt-2 me-auto"> @user.FirstName @user.LastName </label>
+                                            <label class=" ms-4 mt-2 me-auto"> @u.FirstName @u.LastName </label>
                                             <input class="form-check-input me-2 mt-2" type="checkbox" value="" id=@user.UserId name="mail">
                                         </div>
 
@@ -123,14 +125,14 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary" id="sendmail" onclick="sendmail(@ViewBag.Missiondetail.MissionId)">Send Mission</button>
+                                    <button type="button" class="btn btn-primary" id="sendmail" onclick="sendmail(@Model.StoryId)">Send Mission</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <button class="btn col me-3 Addfavourite ton ms-2 ">
-                        <a asp-action="volunteering" asp-controller="Home">
+                    <button class="btn col me-3  ms-2  ">
+                        <a asp-action="volunteering" asp-controller="Home" class="text-decoration-none oran p-3"  >
                             <label class="ms-2" id="favmissiondiv">Open Mission</label>
                             <img class="ms-1" src="/Images/right-arrow.png">
                         </a>

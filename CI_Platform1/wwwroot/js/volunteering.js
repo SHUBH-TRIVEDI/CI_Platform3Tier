@@ -5,7 +5,9 @@ showSlides(slideIndex);
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
-
+function LoginAlert() {
+    alert("login First")
+}
 // Thumbnail image controls
 function currentSlide(n) {
     showSlides(slideIndex = n);

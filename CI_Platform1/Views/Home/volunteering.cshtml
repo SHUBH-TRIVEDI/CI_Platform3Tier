@@ -1,5 +1,5 @@
 ﻿@using CI_Platform1.Models
-@model VolunteeringVM 
+@model VolunteeringVM
 
 <partial name="Navbar1" />
 
@@ -155,34 +155,49 @@
                     <hr style="border:1px solid black">
                     @{
                         var userid = Context.Session.GetString("userID");
-                        var useridforrating = int.Parse(userid);
+
                     }
                     <button class="hrbtn border-0">
-
-                        @if (@ViewBag.Missiondetail.Rating != null)
+                        @if (userid != null)
                         {
-
-                            int count = 0;
-
-                            @for (var i = 1; i <= @ViewBag.Missiondetail.Rating; i++)
+                            var useridforrating = int.Parse(userid);
+                            @if (@ViewBag.Missiondetail.Rating != null)
                             {
-                                <i class="bi bi-star-fill" style="color:orange" id="@i" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
-                                count++;
+
+                                int count = 0;
+
+                                @for (var i = 1; i <= @ViewBag.Missiondetail.Rating; i++)
+                                {
+                                    <i class="bi bi-star-fill" style="color:orange" id="@i" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                                    count++;
+                                }
+                                @for (var k = count + 1; k <= 5; k++)
+                                {
+                                    <i class="bi bi-star-fill" id="@k" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                                }
+
                             }
-                            @for (var k = count + 1; k <= 5; k++)
+                            else
                             {
-                                <i class="bi bi-star-fill" id="@k" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                                <i class="bi bi-star-fill" id="1" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                                <i class="bi bi-star-fill" id="2" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                                <i class="bi bi-star-fill" id="3" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                                <i class="bi bi-star-fill" id="4" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                                <i class="bi bi-star-fill" id="5" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
                             }
 
                         }
                         else
                         {
-                            <i class="bi bi-star-fill" id="1" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
-                            <i class="bi bi-star-fill" id="2" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
-                            <i class="bi bi-star-fill" id="3" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
-                            <i class="bi bi-star-fill" id="4" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
-                            <i class="bi bi-star-fill" id="5" onclick="addRating(this.id,@ViewBag.Missiondetail.MissionId,@useridforrating)"></i>
+                            <i class="bi bi-star-fill" id="1" onclick="LoginAlert()"></i>
+                            <i class="bi bi-star-fill" id="1" onclick="LoginAlert()"></i>
+                            <i class="bi bi-star-fill" id="1" onclick="LoginAlert()"></i>
+                            <i class="bi bi-star-fill" id="1" onclick="LoginAlert()"></i>
+                            <i class="bi bi-star-fill" id="1" onclick="LoginAlert()"></i>
+
+
                         }
+
                     </button>
                     <hr style="border:1px solid black">
                 </div>

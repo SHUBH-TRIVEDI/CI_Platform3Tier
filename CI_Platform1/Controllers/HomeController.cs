@@ -249,10 +249,6 @@ namespace CI_Platform1.Controllers
             lp.favoriteMissions = _Landing.favoriteMissions();
             lp.missionApplications = _Landing.missionApplications();
 
-
-
-
-
             //Search Mission
             if (SearchingMission != null)
             {
@@ -310,7 +306,7 @@ namespace CI_Platform1.Controllers
                     break;
 
                 case 4:
-                    lp.missions = lp.missions.OrderBy(e => e.Availability).ToList();
+                    lp.missions = lp.missions.OrderBy(e =>Convert.ToInt32(e.Availability)).ToList();
                     break;
 
                 case 5:
@@ -364,10 +360,9 @@ namespace CI_Platform1.Controllers
             ViewBag.alluser = lp.users;
 
             var userid = HttpContext.Session.GetString("userID");
-            ViewBag.UserId = int.Parse(userid);
+            //ViewBag.UserId = int.Parse(userid);
 
-
-            var ratings = _Interface.missionRatings().FirstOrDefault(MR => MR.MissionId == missionId && MR.UserId == int.Parse(userid));
+           
 
             ViewBag.user = lp.users.FirstOrDefault(e => e.UserId == id);
             List<VolunteeringVM> relatedlist = new List<VolunteeringVM>();
@@ -399,25 +394,34 @@ namespace CI_Platform1.Controllers
             volunteeringVM.EndDate = Enddate[0];
             volunteeringVM.StartDate = Startdate[0];
             volunteeringVM.favoriteMissions = _CiPlatformContext.FavoriteMissions.ToList();
-            volunteeringVM.Rating = ratings != null ? Convert.ToInt64(ratings.Rating) : 0;
+            if (userid != null)
+            {
+                var ratings = _Interface.missionRatings().FirstOrDefault(MR => MR.MissionId == missionId && MR.UserId == int.Parse(userid));
+
+                volunteeringVM.Rating = ratings != null ? Convert.ToInt64(ratings.Rating) : 0;
+
+
+                var app = lp.missionApplications.Where(u => u.UserId == Convert.ToInt32(userid) && u.MissionId == missionid).ToList();
+                if (app.Count() != 0)
+                {
+                    volunteeringVM.isapplied = 1;
+                }
+                else
+                {
+                    volunteeringVM.isapplied = 0;
+                }
+                ViewBag.isapplied = volunteeringVM.isapplied;
+                var fav = volunteeringVM.favoriteMissions.FirstOrDefault(u => u.UserId == Convert.ToInt32(userid) && u.MissionId == missionId);
+                ViewBag.fav = fav;
+
+            }
             volunteeringVM.GoalObjectiveText = themeobjective.GoalObjectiveText;
+            volunteeringVM.comments = _CiPlatformContext.Comments.Where(m=>m.MissionId== missionid).ToList();
 
             //volunteeringVM.missionApplications= _CiPlatformContext.MissionApplications.ToList();
-
-            var app = lp.missionApplications.Where(u=>u.UserId==Convert.ToInt32(userid) && u.MissionId== missionid).ToList();
-            if (app.Count()!=0)
-            {
-                volunteeringVM.isapplied = 1;
-            }
-            else
-            {
-                volunteeringVM.isapplied = 0;
-            }
-            ViewBag.isapplied = volunteeringVM.isapplied;
-
-            var fav = volunteeringVM.favoriteMissions.FirstOrDefault(u => u.UserId == Convert.ToInt32(userid) && u.MissionId == missionId);
-            ViewBag.fav = fav;
-
+            
+            
+     
             //Average Rating
             int finalrating = 0;
             var ratinglist = _Interface.missionRatings().Where(m => m.MissionId == volmission.MissionId).ToList();
@@ -464,7 +468,7 @@ namespace CI_Platform1.Controllers
                 ;
             }
             ViewBag.relatedmission = relatedlist.Take(3);
-            return View(selected);
+            return View(volunteeringVM);
         }
 
         //Story Listing
@@ -552,35 +556,15 @@ namespace CI_Platform1.Controllers
         {
             var userid = HttpContext.Session.GetString("userID");
             ViewBag.UserId = int.Parse(userid);
-            StoryShareVM ss = new StoryShareVM();
-            ss.missions = _Landing.missions();
-            ss.missionApplications = _CiPlatformContext.MissionApplications.ToList();
+            StoryShareVM sl = new StoryShareVM();
+            sl.missions = _Landing.missions();
+            sl.missionApplications = _CiPlatformContext.MissionApplications.ToList();
 
-                StoryShareVM sl = new StoryShareVM();
-            if(StoryId != 0)
-            {
-
-                sl.storymedia = _CiPlatformContext.StoryMedia.Where(e => e.StoryId == StoryId).ToList();
-                sl.missionApplications = _CiPlatformContext.MissionApplications.Where(m => m.UserId == Convert.ToInt32(userid)).ToList();
-
-                var story = _CiPlatformContext.Stories.Where(e => e.StoryId == StoryId).FirstOrDefault();
-                sl.MissionId = story.MissionId;
-                sl.Title = story.Title;
-                sl.editor1 = story.Description;
-                sl.StoryId = story.StoryId;
-                sl.date = story.PublishedAt;
-                return View(sl);
-
-            }
-            else
-            {
-                return View(sl);
-
-            }
+            return View(sl);
         }
 
         [HttpPost]
-        public IActionResult Storyshare(StoryShareVM ss, string action, IFormFileCollection? dragdrop)
+        public async Task<IActionResult> Storyshare(StoryShareVM ss, string action, IFormFileCollection? dragdrop)
         {
             if (action == "submit")
             {
@@ -598,30 +582,24 @@ namespace CI_Platform1.Controllers
                 stories.CreatedAt = DateTime.Now;
                 _CiPlatformContext.Stories.Add(stories);
                 _CiPlatformContext.SaveChanges();
+                var sId = stories.StoryId;
 
-            //Image view
-                foreach (IFormFile file in dragdrop)
+                if(ss.attachment !=null)
                 {
-                    if (file != null)
+                    foreach(var i in ss.attachment)
                     {
-                        //Set Key Name
-                        string ImageName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
-
-                        //Get url To Save
-                        string SavePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\img\\storyuserimg", ImageName);
-
-                        using (var stream = new FileStream(SavePath, FileMode.Create))
+                        var FileName = "";
+                        using (var ms = new MemoryStream())
                         {
-                            //StoryShareVM sm = new StoryShareVM();
-                            ss.StoryType = file.ContentType.ToString().Replace("image/", "");
-                            ss.StoryPath = ImageName;
-                            ss.CreatedAt = DateTime.Now;
-                            //stories.StoryMedia.Add(sm);
-                            //stories.StoryMedia.Add(ss);
-                            file.CopyTo(stream);
+                            await i.CopyToAsync(ms);
+                            var imageBytes = ms.ToArray();
+                            var base64String = Convert.ToBase64String(imageBytes);
+                            FileName = "data:image/png;base64," + base64String;
                         }
+                        _Interface.AddStoryMedia(i.ContentType.Split("/")[0], FileName, ss.mission_id, Convert.ToInt32(userid), ss.StoryId, sId);
                     }
                 }
+
                 return View(ss);
             }
 
@@ -641,10 +619,26 @@ namespace CI_Platform1.Controllers
                 stories.CreatedAt = DateTime.Now;
                 _CiPlatformContext.Stories.Add(stories);
                 _CiPlatformContext.SaveChanges();
+
+                var sId = stories.StoryId;
+
+                if (ss.attachment != null)
+                {
+                    foreach (var i in ss.attachment)
+                    {
+                        var FileName = "";
+                        using (var ms = new MemoryStream())
+                        {
+                            await i.CopyToAsync(ms);
+                            var imageBytes = ms.ToArray();
+                            var base64String = Convert.ToBase64String(imageBytes);
+                            FileName = "data:image/png;base64," + base64String;
+                        }
+                        _Interface.AddStoryMedia(i.ContentType.Split("/")[0], FileName, ss.mission_id, Convert.ToInt32(userid), ss.StoryId, sId);
+                    }
+                }
                 return View(ss);
-
             }
-
             else
             {
                 return View(ss);
@@ -658,45 +652,25 @@ namespace CI_Platform1.Controllers
             ViewBag.UserId = int.Parse(userid);
 
             StoryShareVM sl= new StoryShareVM();
-            sl.Stories=  _CiPlatformContext.Stories.Where(u=> u.Status=="draft" && u.UserId==Convert.ToInt64(userid)).ToList();
+            sl.Stories=  _CiPlatformContext.Stories.Where(u=>(u.Status=="Draft") && (u.UserId==Convert.ToInt64(userid))).ToList();
             sl.users = _CiPlatformContext.Users.ToList();
             sl.missions=_CiPlatformContext.Missions.ToList();
             sl.missionThemes = _CiPlatformContext.MissionThemes.ToList();
             sl.storymedia=_CiPlatformContext.StoryMedia.ToList();
 
             return View(sl);
-
-
-            return View();
         }
 
         //Story Detail
         public IActionResult StoryDetail(int missionid)
         {
-            var userid = HttpContext.Session.GetString("userID");
-            var user = Convert.ToInt64(userid);
-            ViewBag.UserId = int.Parse(userid);
-
-            //Reccomend to Coworker
-            List<User> Alluser = _CiPlatformContext.Users.ToList();
-            ViewBag.alluser = Alluser;
-
-            List<VolunteeringVM> relatedlist = new List<VolunteeringVM>();
-            VolunteeringVM volunteeringVM = new VolunteeringVM();
-            ViewBag.Missiondetail = volunteeringVM;
-
-            //var volmission = lp.missions.FirstOrDefault(m => m.MissionId == missionid);
-            StoryShareVM sd = new StoryShareVM();
-            sd.UserId = Convert.ToInt64(HttpContext.Session.GetString("userID"));
-
-            var users = _CiPlatformContext.Users.FirstOrDefault(u=> u.UserId == user);
-            var mission = _CiPlatformContext.Missions.FirstOrDefault(u=> u.MissionId == missionid);
-
-            sd.username = users.FirstName;
-
-            return View();
+            StoryShareVM st= new StoryShareVM();
+            var Story = _CiPlatformContext.Stories.Where(w => w.StoryId == missionid).FirstOrDefault();
+            st.singleStory = Story;
+            st.users = _CiPlatformContext.Users.ToList();
+            st.missions = _CiPlatformContext.Missions.ToList();
+            return View(st);
         }
-
 
 
         private void ToList()
@@ -705,6 +679,11 @@ namespace CI_Platform1.Controllers
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult EditProfile()
         {
             return View();
         }
@@ -737,12 +716,10 @@ namespace CI_Platform1.Controllers
         //favroite landing page
         public IActionResult addToFavouriteLanding(int missonid)
         {
-            if (ViewBag.user != null)
-            {
+          
                 var userId = HttpContext.Session.GetString("userID");
                 ViewBag.UserId = int.Parse(userId);
 
-                //add favourite mission data
                 if (missonid != null)
                 {
                     //var tempFav = _IUser.favoriteMissions().Where(e => (e.MissionId == missonid) && (e.UserId == Convert.ToInt32(userId))).FirstOrDefault();
@@ -750,7 +727,6 @@ namespace CI_Platform1.Controllers
 
                 }
                 return RedirectToAction("_Missions", new { id = int.Parse(userId), missionid = missonid });
-            }
             return View();
         }
 
@@ -766,33 +742,6 @@ namespace CI_Platform1.Controllers
             _CiPlatformContext.SaveChanges();
             return RedirectToAction("volunteering", new { id = Convert.ToInt64(HttpContext.Session.GetString("userID")), missionid = missionId });
         }
-
-
-        ////user details
-        //[HttpPost]
-        //public IActionResult GetDetails()
-        //{
-        //    LandingPageVM umodel = new LandingPageVM();
-
-        //    //umodel.Name = HttpContext.Request.Form["txtName"].ToString();
-        //    //umodel.Age = Convert.ToInt32(HttpContext.Request.Form["txtAge"]);
-        //    //umodel.City = HttpContext.Request.Form["txtCity"].ToString();
-        //    umodel.stories = _CiPlatformContext.Stories.ToList();
-        //    var lp = umodel.stories;
-
-        //    lp.
-
-        //    int result = umodel.SaveDetails();
-        //    if (result > 0)
-        //    {
-        //        ViewBag.Result = "Data Saved Successfully";
-        //    }
-        //    else
-        //    {
-        //        ViewBag.Result = "Something Went Wrong";
-        //    }
-        //    return View("Profile");
-        //}
 
         //-----------------Reccomend to coworker----------------------
 

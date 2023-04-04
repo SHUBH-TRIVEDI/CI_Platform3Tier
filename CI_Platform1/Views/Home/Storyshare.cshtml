@@ -1,6 +1,4 @@
-﻿@*@using CI_Entities1.Models.ViewModel
-@model StoryShareVM*@
-@using CI_Entities1.Models.ViewModel
+﻿@using CI_Entities1.Models.ViewModel
 @model StoryShareVM
 
 <partial name="Navbar1" />
@@ -15,7 +13,7 @@
 <body>
     <hr />
     <div class="container">
-        <form method="post" asp-action="Storyshare" asp-controller="Home">
+        <form method="post" asp-action="Storyshare" asp-controller="Home" enctype="multipart/form-data" >
             <div class="mt-2 fs-2">
                 Share Your Story
             </div>
@@ -56,9 +54,9 @@
 
 
             <label class=" fs-5 mt-2 "> Upload Your Photos</label>
-            <div class="input-div">
+            <div class="input-div" >
                 <p>Drag & drop photos here or <strong>Browse</strong></p>
-                <input type="file" class="file" multiple="multiple" name="dragdrop" accept="image/jpeg, image/PNG, image/jpg">
+                <input type="file" asp-for="attachment" class="file-input file" multiple="multiple"  accept="image/jpeg, image/PNG, image/jpg">
             </div>
 
             <output class="d-flex"></output>

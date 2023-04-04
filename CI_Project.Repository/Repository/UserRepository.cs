@@ -20,6 +20,18 @@ namespace CI_Project.Repository.Repository
             _CiPlatformContext= CiPlatformContext;
         }
 
+        public void AddStoryMedia(string mediaType, string mediaPath, long missionId, long userId, long storyId, long sId)
+        {
+
+            StoryMedium sm = new StoryMedium();
+            sm.StoryId = sId;
+            sm.StoryType = mediaType;
+            sm.StoryPath = mediaPath;
+            _CiPlatformContext.Add(sm);
+            _CiPlatformContext.SaveChanges();
+
+        }
+
         public MissionApplication ApplyMission(int missonid, int userid)
         {
             MissionApplication ma = new MissionApplication();

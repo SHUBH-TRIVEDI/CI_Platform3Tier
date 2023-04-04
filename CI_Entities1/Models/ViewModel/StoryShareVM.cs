@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace CI_Entities1.Models.ViewModel
 {
     public class StoryShareVM
     {
-
+        public List<IFormFile> attachment { get; set; }
         public long StoryId { get; set; }
 
         public long MissionId { get; set; }
@@ -48,7 +49,7 @@ namespace CI_Entities1.Models.ViewModel
 
         public List<MissionApplication> missionApplications { get; set; }
 
-
+        public Story singleStory { get; set; }
 
         //StoryList
         public List<Story> Stories { get; set; }
