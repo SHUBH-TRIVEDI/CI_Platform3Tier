@@ -12,6 +12,7 @@ html {
     border-radius: 22px;
     color: #fd7e14;
     background-color:white;
+    height:3rem;
 }
 
 @media (min-width: 768px) {

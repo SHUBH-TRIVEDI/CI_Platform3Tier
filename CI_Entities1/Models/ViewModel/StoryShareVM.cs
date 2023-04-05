@@ -26,6 +26,7 @@ namespace CI_Entities1.Models.ViewModel
 
         public DateTime? date { get; set; }
 
+        public int? Views { get; set; }
 
         public DateTime CreatedAt { get; set; }
 
@@ -63,8 +64,6 @@ namespace CI_Entities1.Models.ViewModel
         public List<StoryMedium> storymedia { get; set; }
 
         public string? FirstName { get; set; }
-
-
         //StoryDetails
         public List<User> users { get; set; }
 

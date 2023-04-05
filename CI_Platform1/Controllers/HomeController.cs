@@ -286,12 +286,6 @@ namespace CI_Platform1.Controllers
                 return RedirectToAction("NoMissionFound", "Home");
             }
 
-            //Add to favrouite
-
-            if (ViewBag.user != null)
-            {
-
-            }
             //Order By
             switch (order)
             {
@@ -313,11 +307,6 @@ namespace CI_Platform1.Controllers
                     lp.missions = lp.missions.OrderBy(e => e.ThemeId).ToList();
                     break;
 
-                    //case 6:
-                    //    lp.missions = lp.missions.Where(m => m.fav == true).ToList();
-                    //    break;
-                    //    //lp.missions = lp.missions.OrderByDescending(e => e.fav).ToList();
-                    //    //lp.missions = lp.missions.Where(m => m.fav == true).ToList();
 
             }
 
@@ -390,7 +379,7 @@ namespace CI_Platform1.Controllers
             volunteeringVM.Availability = volmission.Availability;
             volunteeringVM.MissionType = volmission.MissionType;
             volunteeringVM.Cityname = City.Name;
-            volunteeringVM.Themename = theme.Title;
+            //volunteeringVM.Themename = theme.Title;
             volunteeringVM.EndDate = Enddate[0];
             volunteeringVM.StartDate = Startdate[0];
             volunteeringVM.favoriteMissions = _CiPlatformContext.FavoriteMissions.ToList();
@@ -471,6 +460,7 @@ namespace CI_Platform1.Controllers
             return View(volunteeringVM);
         }
 
+
         //Story Listing
         public IActionResult Storylisting(int jpg)
         {
@@ -480,9 +470,6 @@ namespace CI_Platform1.Controllers
             storylist.users = _CiPlatformContext.Users.ToList();
             storylist.missions = _CiPlatformContext.Missions.ToList();
             storylist.storymedia= _CiPlatformContext.StoryMedia.ToList();
-
-
-            
 
             //Pagination
             ViewBag.missionCount = storylist.Stories.Count();
@@ -688,6 +675,29 @@ namespace CI_Platform1.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult EditProfile(UserVM user)
+        {
+            var userid = HttpContext.Session.GetString("userID");
+            ViewBag.UserId = int.Parse(userid);
+            var obj=_CiPlatformContext.Users.Where(u=>u.UserId ==Convert.ToInt32(userid)).FirstOrDefault();
+            obj.FirstName=user.FirstName;
+            obj.LastName=user.LastName;
+            obj.EmployeeId = user.EmployeeId;
+            obj.Title = user.Title;
+            obj.Department = user.Department;
+            obj.ProfileText = user.ProfileText;
+            obj.WhyIVolunteer=user.WhyIVolunteer;
+            obj.City= user.City;
+            obj.Country= user.Country;
+            obj.LinkedInUrl = user.LinkedInUrl;
+            
+            _CiPlatformContext.Users.Add(obj);
+            _CiPlatformContext.Users.Update(obj);
+            _CiPlatformContext.SaveChanges();
+            
+            return View();
+        }
 
         //--------------------Error--------------------
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -702,12 +712,9 @@ namespace CI_Platform1.Controllers
             var userId = HttpContext.Session.GetString("userID");
             ViewBag.UserId = int.Parse(userId);
 
-            //add favourite mission data
             if (missonid != null)
             {
-                //var tempFav = _IUser.favoriteMissions().Where(e => (e.MissionId == missonid) && (e.UserId == Convert.ToInt32(userId))).FirstOrDefault();
                 _Interface.FavMission(missonid, Convert.ToInt32(userId));
-
             }
             return RedirectToAction("Volunteering", new { id = int.Parse(userId), missionid = missonid });
 
@@ -748,8 +755,6 @@ namespace CI_Platform1.Controllers
         [HttpPost]
         public async Task<IActionResult> Sendmail(long[] userid, int id)
         {
-
-
             foreach (var item in userid)
             {
                 var user = _CiPlatformContext.Users.FirstOrDefault(u => u.UserId == item);

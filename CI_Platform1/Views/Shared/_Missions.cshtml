@@ -91,9 +91,7 @@
                     <li><a class="dropdown-item" onclick="mysearch(order=3)">End Date</a></li>
                     <li><a class="dropdown-item" onclick="mysearch(order=4)">Availbility</a></li>
                     <li><a class="dropdown-item" onclick="mysearch(order=5)">Theme</a></li>
-                    <li><a class="dropdown-item" onclick="mysearch(order=6)">Favrouite</a></li>
-
-
+                    @*<li><a class="dropdown-item" onclick="mysearch(order=6)">Favrouite</a></li>*@
                 </ul>
             </div>
 
@@ -284,7 +282,7 @@
 
                         @*href="/Home/volunteering/@ViewBag.user.UserId?missionid=@category.MissionId"*@
                         <div class="text-center ">
-                            <a asp-controller="Home" asp-action="volunteering" asp-route-missionid="@category.MissionId" class="btn shadow-none cardbtn mx-auto ">
+                            <a asp-controller="Home" asp-action="volunteering" asp-route-missionid="@category.MissionId" class="btn shadow-none cardbtn mx-auto " >
                                 <span>Apply</span> <img class="ms-1"
                                                     src="/Images/right-arrow.png">
                             </a>

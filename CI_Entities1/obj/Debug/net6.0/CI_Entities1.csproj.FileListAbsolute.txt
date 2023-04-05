@@ -58,7 +58,6 @@ C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Entities1\bin\Debug\net6.0\CI_Entitie
 C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Entities1\bin\Debug\net6.0\CI_Entities1.dll
 C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Entities1\bin\Debug\net6.0\ref\CI_Entities1.dll
 C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Entities1\bin\Debug\net6.0\CI_Entities1.pdb
-C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Entities1\obj\Debug\net6.0\CI_Entities1.csproj.AssemblyReference.cache
 C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Entities1\obj\Debug\net6.0\CI_Entities1.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Entities1\obj\Debug\net6.0\CI_Entities1.AssemblyInfoInputs.cache
 C:\Users\tatva\Desktop\CI_Platform3Tier\CI_Entities1\obj\Debug\net6.0\CI_Entities1.AssemblyInfo.cs

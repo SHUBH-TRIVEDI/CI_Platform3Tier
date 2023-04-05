@@ -8,13 +8,6 @@
         .eye {
             border-radius: 22px;
         }
-
-/*        .ton {
-            border-color: #F88634;
-            border-radius: 22px;
-            padding: 0px !important;
-            color: #F88634;
-        }*/
     </style>
 </head>
 
@@ -97,11 +90,9 @@
 
                 @*Reccomend To CO-Worker*@
                 <div class="row ms-5">
-                    <button class="col" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <div class="oran p-3">
+                    <button class="btn col ton Addfavourite shadow-none oran" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="bi bi-square-fill"></i>
-                        <span class="font-si ">Recommend to a Co-Worker</span>
-                        </div>
+                        <span class="font-si">Recommend to a Co-Worker</span>
                     </button>
 
                     <div class="modal fade modal-dialog-scrollable" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -109,34 +100,34 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="exampleModalLabel">Send Recommend TO</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body overflow-y-auto" style="height:200px;">
-                                    @foreach (var u in Model.users)
+                                    @foreach (var u in @Model.users)
                                     {
 
                                         <div class="d-flex my-3 bg-light ">
                                             <img src="~/images/volunteer1.png" class="rounded-5 me-5" style="border-radius:50%;width:50px;height:50px">
                                             <label class=" ms-4 mt-2 me-auto"> @u.FirstName @u.LastName </label>
-                                            <input class="form-check-input me-2 mt-2" type="checkbox" value="" id=@user.UserId name="mail">
+                                            <input class="form-check-input me-2 mt-2" type="checkbox" value="" id=@u.UserId name="mail">
                                         </div>
 
                                     }
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary" id="sendmail" onclick="sendmail(@Model.StoryId)">Send Mission</button>
+                                    <button type="button" class="btn btn-secondary shadow-none" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary shadow-none" id="sendmail" onclick="sendmail(@Model.StoryId)">Send Mission</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <button class="btn col me-3  ms-2  ">
-                        <a asp-action="volunteering" asp-controller="Home" class="text-decoration-none oran p-3"  >
-                            <label class="ms-2" id="favmissiondiv">Open Mission</label>
-                            <img class="ms-1" src="/Images/right-arrow.png">
-                        </a>
+                    @*<a asp-action="volunteering" asp-controller="Home" class="col">*@
+                    <button class="btn col me-3  ms-2  oran  shadow-none"  >
+                        <label class="ms-2" id="favmissiondiv">Open Mission</label>
+                        <img class="ms-1" src="/Images/right-arrow.png">
                     </button>
+                    @*</a>*@
                 </div>
 
                 @*over*@
